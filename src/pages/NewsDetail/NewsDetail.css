@@ -1,0 +1,119 @@
+.news_detail {
+  width: 100%;
+  padding-top: 30px;
+  padding-bottom: 140px;
+}
+.news_detail .a{
+  text-decoration: none;
+}
+
+.news_detail .news_detail_block {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+
+.news_detail .news_detail_block .image {
+  width: 100%;
+  height: 340px;
+  border-radius: 14px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.news_detail .news_block {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.news_detail h2 {
+  margin-top: 40px;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--black);
+}
+
+.news_detail .desc {
+  margin-top: 16px;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--black_w);
+}
+
+.news_detail .news_box {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.news_detail .news_box img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 14px;
+  object-position: center;
+  margin-bottom: 16px;
+}
+
+.news_detail .news_box .flex {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start !important;
+  gap: 0 !important;
+}
+
+.news_detail .news_box .title {
+  max-height: 60px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 20px;
+  color: var(--blue);
+  text-decoration: underline;
+  white-space: wrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 16px;
+}
+
+.news_detail .news_box .text {
+  height: 54px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 18px;
+  color: var(--black_w);
+  white-space: wrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.news_detail .date_and_link {
+  margin-top: 12px;
+  display: flex;
+  gap: 14px;
+}
+
+.news_detail .news_box .date {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--gray);
+}
+
+.news_detail .news_box .link {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--blue);
+}
+
+.news_detail .date {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.news_detail .date p {
+  margin: 16px 0;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--gray);
+}

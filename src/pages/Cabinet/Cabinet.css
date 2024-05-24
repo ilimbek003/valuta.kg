@@ -1,0 +1,119 @@
+.cabinet {
+  width: 100%;
+  padding: 30px;
+  padding-bottom: 140px;
+  background: var(--gray_ww);
+}
+
+.cabinet h1 {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--black_w);
+  margin-bottom: 30px;
+}
+
+.cabinet .title {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--black_w);
+}
+
+.cabinet .col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cabinet .text {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--gray);
+}
+
+.cabinet .texting {
+  padding: 10px;
+  border-radius: 6px;
+  background: var(--gray_ww);
+  border: none;
+}
+
+.cabinet .grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 2.5fr;
+}
+
+.cabinet .applications_block {
+  margin-top: 20px;
+  border-radius: 14px;
+  padding: 20px;
+  background: var(--gray_ww);
+}
+
+.cabinet .text.red {
+  color: var(--red);
+  cursor: pointer;
+}
+
+.cabinet .text.blue {
+  color: var(--blue);
+  cursor: pointer;
+}
+
+.cabinet .sell_buy {
+  padding: 10px 16px;
+  border-radius: 6px;
+  color: var(--blue);
+  background: #1856cd1a;
+}
+
+.cabinet h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--black_w);
+  margin-bottom: 16px;
+}
+
+.cabinet .grid_two {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.cabinet .column {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.cabinet .deleted {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+}
+
+.cabinet .form_password {
+  margin-top: 30px;
+  width: 100%;
+}
+
+.cabinet .btns {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.cabinet .btns .button_form.off {
+  background: var(--gray);
+}
+
+.cabinet .btns .button_form.on {
+  background: var(--red);
+}
+
+.cabinet .white_block p {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--valuta-, rgba(49, 49, 49, 1));
+}

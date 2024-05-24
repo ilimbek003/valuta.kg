@@ -1,0 +1,258 @@
+.nav {
+  width: 100%;
+}
+
+.nav .banner {
+  margin-top: 10px;
+  width: 100%;
+  height: 240px;
+  border-radius: 20px;
+  object-fit: cover;
+  object-position: center;
+  padding: 0 10px;
+}
+
+.nav .nav_main {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: 2.5fr 1fr;
+  gap: 30px;
+  padding: 20px 30px;
+  background: var(--gray_ww);
+  border-radius: 20px;
+}
+
+.nav .nav_main img {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+  object-position: center;
+}
+.nav .nav_main .resize {
+  width: 100%;
+  min-height: 410px;
+}
+.nav .nav_main .rec {
+  width: 324px;
+  height: 400px;
+}
+.nav .slick-dots {
+  display: none !important;
+}
+
+.nav .nav_main .nav_box {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr 1fr;
+  margin-bottom: 30px;
+}
+
+.nav .last {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.nav .nav_main .nav_box .title {
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--black);
+  white-space: nowrap;
+}
+
+.nav .nav_main .nav_box .text {
+  margin-top: 4px;
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--gray);
+}
+
+.nav .nav_main .nav_box .link {
+  margin-top: 4px;
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--blue);
+}
+
+.nav .buy_sell {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.nav .buy_sell p {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--gray);
+}
+
+.nav .nav_box_s {
+  padding: 16px 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  align-items: center;
+}
+
+.nav .first {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav .first .name {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--gray);
+}
+
+.nav .number {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--black);
+}
+
+.nav .number.blue {
+  color: var(--blue);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.nav .nav_box_s img {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.nav .nav_box_s .last_e {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+@media (max-width: 970px) {
+  .nav .nav_main {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .nav .nav_main .rec {
+    width: 100%;
+    height: 400px;
+  }
+  .nav .last {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .nav .last_s {
+    display: flex;
+  }
+}
+
+@media (max-width: 640px) {
+  .nav .nav_box_s .last_e {
+    display: none;
+  }
+  .nav .last_e {
+    display: none;
+  }
+  .nav .buy_sell {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+  .nav .nav_box_s {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+  .nav .nav_main .nav_box {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-bottom: 30px;
+  }
+  .nav .none_buy_sell {
+    display: none;
+  }
+  .nav .last {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .nav .span {
+    display: none;
+  }
+  .nav .text {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav .nav_main .nav_box .best {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--valuta-, rgba(24, 86, 205, 1));
+    white-space: nowrap;
+    margin: 0 auto;
+  }
+  .nav .nav_main .nav_box .title {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--valuta-, rgba(28, 28, 28, 1));
+    white-space: nowrap;
+    margin: 0 auto;
+  }
+  .nav .last_one {
+    display: flex;
+    position: relative;
+  }
+  .nav .best_line {
+    display: flex;
+    position: relative;
+  }
+  .nav .best_line::before {
+    content: "";
+    width: 100%;
+    height: 4px;
+    border-radius: 50px;
+    background: var(--valuta-, rgba(24, 86, 205, 1));
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+  }
+  .nav .nav_main .nav_box .link {
+    display: none;
+  }
+  .nav .last_bets_one {
+    display: none;
+  }
+  .nav .last_s {
+    display: flex;
+  }
+  .nav .last {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0 !important;
+  }
+}
+
+@media (max-width: 430px) {
+  .nav .last_bets {
+    display: none;
+  }
+  .nav .buy_sell {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .nav .nav_box_s {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

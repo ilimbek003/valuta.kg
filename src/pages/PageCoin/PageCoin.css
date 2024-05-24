@@ -1,0 +1,404 @@
+.page_coin {
+  width: 100%;
+  min-height: 200px;
+  padding-top: 30px;
+  padding-bottom: 140px;
+  background: var(--gray_ww);
+}
+
+.page_coin .coin_box {
+  width: 100%;
+  min-height: 50px;
+  background: #fff;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.page_coin .btns {
+  border-bottom: 1px solid var(--gray_w);
+  margin-bottom: 16px;
+}
+
+.page_coin .btn {
+  padding: 10px 20px;
+  outline: none;
+  border: none;
+  background: transparent;
+  font-weight: 16;
+  font-weight: 500;
+  color: var(--gray);
+  cursor: pointer;
+}
+
+.page_coin .btn_chart {
+  padding: 5px 15px;
+  outline: none;
+  border: none;
+  background: var(--valuta-, rgba(245, 247, 250, 1));
+  font-weight: 16;
+  font-weight: 500;
+  color: var(--gray);
+  cursor: pointer;
+  border-radius: 50px;
+  margin: 0 0 0 10px;
+}
+.page_coin .btn.active {
+  color: var(--blue);
+  border-bottom: 2px solid var(--blue);
+}
+.page_coin .btn_chart.active_one {
+  color: var(--valuta-, rgba(255, 255, 255, 1));
+  background: var(--blue);
+  border-radius: 50px;
+}
+
+.page_coin .news {
+  margin-top: 60px;
+  width: 100%;
+}
+
+.page_coin .news h2 {
+  font-weight: 600;
+  font-size: 30px;
+  color: var(--black);
+  margin-bottom: 30px;
+}
+
+.page_coin .news_block {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 20px;
+  row-gap: 30px;
+}
+
+.page_coin .news_box {
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  gap: 20px;
+  height: 160px;
+  cursor: pointer;
+}
+
+.page_coin .news_box img {
+  width: 170px;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 14px;
+  object-position: center;
+}
+
+.page_coin .news_box .flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.page_coin .news_box .title {
+  height: 60px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 20px;
+  color: var(--blue);
+  text-decoration: underline;
+  white-space: wrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.page_coin .news_box .text {
+  height: 54px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 18px;
+  color: var(--black_w);
+  white-space: wrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.page_coin .date_and_link {
+  margin-top: 12px;
+  display: flex;
+  gap: 14px;
+}
+
+.page_coin .news_box .date {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--gray);
+}
+
+.page_coin .news_box .link {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--blue);
+}
+
+.page_coin .coin_block {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+}
+
+.page_coin .two,
+.page_coin .one {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.page_coin .between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+/* .page_coin .apexcharts-text tspan {
+  display: none !important;
+} */
+
+.page_coin .flex {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.page_coin .flex img {
+  width: 30px;
+  height: 30px;
+}
+
+.page_coin .price_block {
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.page_coin .star {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.page_coin .coin_block h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--black_w);
+  margin-bottom: 20px;
+}
+
+.page_coin .column {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.page_coin .title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--black_w);
+}
+.page_coin .image_emoji.active {
+  background: var(--blue);
+  color: #fff;
+}
+
+.page_coin .text {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--gray);
+  white-space: nowrap;
+}
+
+.page_coin .bold {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--black_w);
+}
+
+.page_coin .text.g {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--gray_g);
+}
+
+.page_coin .price {
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--black_w);
+}
+
+.page_coin .green_text,
+.page_coin .red_text {
+  font-size: 14px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.page_coin .red_text {
+  color: #ee0404;
+}
+
+.page_coin .green_text {
+  color: #13aa22;
+}
+
+.page_coin .pris {
+  margin: 14px 0;
+  width: 100%;
+  position: relative;
+  height: 8px;
+  background: #d8d8d8;
+  border-radius: 4px;
+}
+
+.page_coin .pris .renge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 8px;
+  border-radius: 4px;
+  background: linear-gradient(270.02deg, #1856cd 0%, #e843eb 101.43%);
+}
+
+.page_coin .texting {
+  height: 30px;
+  padding: 8px 10px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--black_w);
+  background: var(--gray_ww);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.page_coin .icon {
+  font-size: 16px;
+  color: #afafaf;
+  cursor: pointer;
+}
+
+.page_coin .flexbox {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.page_coin .desc {
+  font-size: 16px;
+  font-weight: 400;
+  color: #8c8c8c;
+}
+
+.page_coin .grid {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.page_coin .image_emoji {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  background: var(--gray_ww);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.page_coin .accordion_container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.page_coin .accordion {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  padding: 0 20px;
+}
+
+.page_coin .accordion.open {
+  max-height: 200px;
+}
+
+.page_coin h4 {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--black_w);
+}
+
+.page_coin .between.acc {
+  cursor: pointer;
+  padding: 16px 20px;
+}
+
+.page_coin .coin_box_accordion {
+  border-radius: 8px;
+  background: var(--gray_ww);
+}
+
+.page_coin .acc_text {
+  font-size: 15px;
+  font-weight: 300;
+  color: #888;
+  padding-bottom: 10px;
+}
+
+.page_coin .not_chart {
+  width: 100%;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page_coin .between_carts {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.renge {
+  height: 10px;
+  background: #e0e0e0;
+  position: relative;
+}
+
+.line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: #000;
+}
+
+@media screen and (max-width: 600px) {
+  .page_coin .coin_block {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .page_coin .coin_box {
+    padding: 20px 0;
+  }
+  .page_coin .coin-box {
+    padding: 20px 20px;
+  }
+  .page_coin .between_carts {
+    padding: 0 20px 0 20px;
+  }
+  .page_coin .news_block {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}

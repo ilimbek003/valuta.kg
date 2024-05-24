@@ -1,0 +1,340 @@
+.profile {
+  width: 100%;
+  padding-top: 30px;
+  padding-bottom: 140px;
+  background: var(--gray_ww);
+}
+
+.profile h1 {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--black_w);
+}
+
+.profile h2 {
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--black_w);
+}
+
+.profile .between.al {
+  margin-bottom: 40px;
+}
+.profile .btc{
+  width: 40px;
+  height: 40px;
+}
+.profile .images {
+  width: 100%;
+  height: 170px;
+  border-radius: 12px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.profile .grid.d {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 650px 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.profile .grid {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.profile .profile_block {
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  gap: 20px;
+}
+
+.profile .column {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.profile .title {
+  height: 30px;
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--black);
+  margin-bottom: 15px;
+}
+
+.profile .text {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--black);
+}
+
+.profile .text .icon {
+  font-size: 24px;
+}
+
+.profile .star {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--gray);
+}
+
+.profile .text.g {
+  font-weight: 400;
+  color: var(--gray);
+}
+
+.profile .text.red {
+  color: var(--red);
+  cursor: pointer;
+}
+
+.profile .text.blue {
+  color: var(--blue);
+  cursor: pointer;
+}
+
+.profile .texting {
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 6px;
+  background: var(--gray_ww);
+}
+
+.profile .offers {
+  margin-top: 30px;
+  width: 100%;
+}
+
+.profile .offer,
+.profile .offer_block {
+  display: grid;
+  grid-template-columns: 2fr 0.8fr 0.8fr 1.3fr 0.8fr 1.3fr;
+  align-items: center;
+}
+
+.profile .offer {
+  padding: 14px 24px;
+  border-bottom: 1px solid #cacaca;
+}
+
+.profile .offer_text {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--gray);
+}
+
+.profile .offer_blocks {
+  margin-top: 10px;
+  width: 100%;
+  padding: 12px;
+  background: var(--gray_ww);
+  border-radius: 14px;
+}
+
+.profile .offer_block {
+  padding: 18px 10px;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.profile .offer_block_text {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--black_w);
+}
+
+.profile .offer_block_title {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--black_w);
+}
+
+.profile .offer_block_time {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--blue);
+}
+
+.profile .offer_block_btn {
+  color: var(--blue);
+  border: 1px solid var(--blue);
+  background: transparent;
+}
+
+.profile .user {
+  width: 44px;
+  height: 44px;
+  background: 50%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.profile .deleted {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+}
+
+.profile .form_password {
+  margin-top: 30px;
+  width: 100%;
+}
+
+.profile .form_password .grid {
+  margin: 0;
+}
+
+.profile .btns {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.profile .btns .button_form.off {
+  background: var(--gray);
+}
+
+.profile .btns .button_form.on {
+  background: var(--red);
+}
+
+.profile .image_block {
+  margin-top: 8px;
+  border-radius: 16px;
+  position: relative;
+  width: 100%;
+  height: 250px;
+  padding: 20px;
+  background: var(--gray_ww);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile .image_block img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 12px;
+}
+
+.profile .not {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  margin: auto;
+  background: rgb(255, 255, 255, 0.6);
+  border-radius: 12px;
+  z-index: 1;
+}
+
+.profile .absolute {
+  position: absolute;
+  z-index: 2;
+}
+
+.profile .empty_img {
+  padding: 8px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  background: #fff;
+  border: 2px dashed var(--blue);
+  border-radius: 12px;
+}
+
+.profile .empty_img img {
+  width: 45px;
+  height: 45px;
+}
+
+.profile .empty_img .button_form {
+  padding: 5px;
+  text-align: center;
+}
+
+.profile .timout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile .timout img {
+  width: 115px;
+  height: 100px;
+  object-fit: cover;
+  object-position: center;
+  margin: 30px 0;
+}
+
+.profile .timout .text {
+  color: var(--gray);
+  text-align: center;
+}
+
+.profile .verification_block {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.profile .verification_block .line {
+  width: 160px;
+  height: 3px;
+  background: gray;
+}
+
+.profile .verification_box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--white);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #afafaf;
+}
+
+.profile .verification_block .line.active,
+.profile .verification_box.active {
+  background: var(--blue);
+}
+
+.profile .verification_box .absolute_text {
+  position: absolute;
+  top: 40px;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--gray);
+}
+
+.profile .verification_box .absolute_text.active {
+  color: var(--blue);
+}

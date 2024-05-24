@@ -1,0 +1,241 @@
+.exchange_detail {
+  width: 100%;
+  padding-bottom: 140px;
+}
+
+.exchange_detail .div_auth {
+  width: 100%;
+  min-height: 290px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+
+.exchange_detail .div_auth .text {
+  margin: 0;
+  width: 60%;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 400;
+  color: #969696;
+}
+
+.exchange_detail {
+  width: 100%;
+  min-height: 100vh;
+  background: var(--gray_ww);
+  padding-top: 20px;
+}
+
+.exchange_detail .exchange_detail_block_one {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+}
+
+.exchange_detail .map {
+  width: 100%;
+  min-height: 500px;
+  border-radius: 20px;
+}
+
+.exchange_detail .detail {
+  width: 100%;
+  padding: 20px;
+  border-radius: 16px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.exchange_detail .cryptoName {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--valuta-, rgba(28, 28, 28, 1));
+  text-align: center;
+  padding: 30px 0 20px 0;
+}
+.exchange_detail .detail .image {
+  width: 100%;
+  height: 220px;
+  border-radius: 12px;
+  object-fit: cover;
+  object-position: center;
+}
+.exchange_detail .bg_image {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: var(--valuta-, rgba(240, 240, 240, 1));
+  padding: 10px 14px;
+  cursor: pointer;
+}
+.exchange_detail .flex_one_exchange {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--valuta--, rgba(140, 140, 140, 1));
+}
+.exchange_detail .title {
+  margin-top: 18px;
+  font-size: 30px;
+  font-weight: 500;
+  color: var(--black);
+  margin-bottom: 15px;
+}
+
+.exchange_detail .text {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--black);
+}
+.exchange_detail .text_title {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--valuta--, rgba(140, 140, 140, 1));
+  margin-bottom: 5px;
+}
+
+.exchange_detail .between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 15px 0 0 0;
+}
+
+.exchange_detail .star {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--gray);
+}
+
+.exchange_detail .exchange_detail_block_two {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.exchange_detail .detail_block {
+  width: 100%;
+  padding: 20px;
+  border-radius: 16px;
+  background: #fff;
+}
+
+.exchange_detail .block_title {
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--black);
+  margin-bottom: 20px;
+}
+
+.exchange_detail .detail_box {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  align-items: center;
+  padding: 8px 0;
+}
+
+.exchange_detail .detail_box .name {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--gray);
+}
+
+.exchange_detail .detail_box .items {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.exchange_detail .detail_box .items img {
+  width: 40px;
+  height: 40px;
+}
+
+.exchange_detail .detail_box .items .btc {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--gray);
+}
+
+.exchange_detail .detail_box .big_text {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--black);
+}
+
+.exchange_detail .detail_box .date {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--blue);
+}
+
+.exchange_detail .flex {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.exchange_detail .flex a {
+  text-decoration: none;
+}
+
+.exchange_detail .button_form.login {
+  background: transparent;
+  color: var(--blue);
+  box-shadow: none;
+}
+
+.exchange_detail h3 {
+  margin-top: 80px;
+  font-size: 30px;
+  font-weight: 500;
+  color: var(--black);
+  margin-bottom: 30px;
+}
+
+.exchange_detail .block_save {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.exchange_detail .stacks_block div {
+  border-radius: 20px;
+  padding: 0 10px 0 10px;
+  background: #fff;
+  margin: 0 0 30px 0;
+}
+.exchange_detail .stacks_block h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.exchange_detail .stacks_block h4 img {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.exchange_detail .not_chart {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

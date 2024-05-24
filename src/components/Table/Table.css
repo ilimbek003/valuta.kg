@@ -1,0 +1,297 @@
+.table {
+  margin-top: 130px;
+  width: 100%;
+}
+
+.table .link {
+  font-weight: 500;
+  color: var(--blue);
+}
+
+.table .head_grid {
+  margin-top: 40px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--gray_w);
+  display: flex;
+  align-items: flex-end;
+  padding: 12px 28px;
+}
+
+.table .grid_col {
+  margin-top: 20px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.table .flex {
+  display: flex;
+  align-items: center;
+  margin: 0 0 0 45px;
+  gap: 10px;
+}
+.table .flex p {
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--black);
+}
+
+.table .table_block {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px;
+  background: var(--gray_ww);
+}
+
+.table .blocks {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px;
+  background: var(--gray_ww);
+  border-radius: 14px;
+}
+
+.table .blocks .grid {
+  padding: 20px 16px;
+  background: #fff;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.table .blocks .grid_flex {
+  display: flex;
+  gap: 30px;
+  width: 20%;
+}
+.table .save {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 40%;
+}
+
+.table .carob {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.table .carob .logos {
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
+  object-position: center;
+}
+.table .star {
+  width: 24px;
+  height: 24px;
+  object-fit: cover;
+  object-position: center;
+  cursor: pointer;
+}
+
+.table .carob .title {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--blue);
+  text-decoration: underline;
+}
+
+.table .gray_texts {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.table .gray_texts_flex {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.table .gray_texts_flex_one {
+  display: flex;
+  align-items: end;
+  gap: 5px;
+}
+
+.table .gray {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--gray);
+  gap: 5px;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+}
+
+.table .chet {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--black_w);
+}
+
+.table .time {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--blue);
+  margin-left: auto;
+}
+
+.table .arrow {
+  margin-bottom: 10px;
+  margin-left: auto;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  cursor: pointer;
+}
+.table .logos_logo {
+  width: 30px;
+  height: 30px;
+}
+
+.table .width_col {
+  width: 40%;
+}
+.table .box {
+  width: 20%;
+}
+.table .min-media {
+  display: none;
+}
+@media screen and (max-width: 900px) {
+  .table .max-media {
+    display: none;
+  }
+  .table .min-media {
+    display: block;
+  }
+}
+
+/* c:/Users/alumb/OneDrive/Рабочий стол/react.js/cryptocurrencies/src/components/Table/Table.css */
+.table .lanes {
+  position: relative;
+}
+.table .lanes::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background: var(--valuta-, rgba(216, 216, 216, 1));
+  bottom: -15px;
+  left: 0;
+  right: 0;
+}
+.table .grid_flex {
+  display: flex;
+  align-items: center;
+}
+.table .grid-flex-twos {
+  margin: 0 0 30px 0;
+}
+.table .grid-flex-all {
+  width: 40%;
+  margin: 29px 0 0 0;
+}
+.table .grid_flex .buys {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--valuta--, rgba(140, 140, 140, 1));
+  margin: 0 0 10px 0;
+}
+.table .save-one {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.table .buy-gap {
+  width: 60%;
+  gap: 40px;
+  position: relative;
+}
+.table .buy-gap::before {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--valuta-, rgba(216, 216, 216, 1));
+}
+.table .buy-gap div {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.table .gap-grid {
+  padding: 20px 30px;
+  margin: 100px 0 0 0;
+  background: var(--gray_ww);
+  border-radius: 20px;
+}
+
+.table .grid_flex-img {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 0 10px 0;
+}
+
+.table .grid-flex-all img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.table .grid-flex-all p {
+  color: var(--valuta--, rgba(140, 140, 140, 1));
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.slick-dots li.slick-active button:before {
+  opacity: 1 !important;
+  color: var(--valuta-, rgba(24, 86, 205, 1)) !important;
+}
+.slick-dots li button:before {
+  font-size: 10px !important;
+}
+
+@media screen and (max-width: 420px) {
+  .table .slick-prev {
+    top: 50px;
+    left: 6px;
+    z-index: 1;
+  }
+  .table .slick-next {
+    top: 50px;
+    z-index: 1;
+    right: 6px;
+  }
+  .table .slick-prev:before,
+  .table .slick-next:before {
+    color: rgba(20, 20, 22, 1) !important;
+    background: transparent !important;
+    font-family: "" !important;
+    font-size: 20px;
+  }
+
+  .table .slick-prev,
+  .slick-next {
+    width: 45px;
+    height: 45px;
+    background: var(--valuta-, rgba(240, 240, 240, 1));
+    border-radius: 50%;
+  }
+}

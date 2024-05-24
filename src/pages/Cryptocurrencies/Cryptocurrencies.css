@@ -1,0 +1,43 @@
+.cryptocurrencies {
+  width: 100%;
+  padding-top: 30px;
+  background: #f5f7fa;
+  padding-bottom: 140px;
+}
+
+.cryptocurrencies .cryptocurrencies_block {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.cryptocurrencies .cryptocurrencies_box {
+  width: 100%;
+  height: 80px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  justify-content: center;
+  border: 2px solid transparent;
+  transition: .3s ease;
+  cursor: pointer;
+}
+.cryptocurrencies .cryptocurrencies_box img{
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
+}
+
+.cryptocurrencies .cryptocurrencies_box:hover {
+  border: 2px solid var(--blue);
+}
+
+.cryptocurrencies .cryptocurrencies_box .text {
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--black);
+}

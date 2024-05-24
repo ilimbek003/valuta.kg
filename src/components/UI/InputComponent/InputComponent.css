@@ -1,0 +1,104 @@
+.sss {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.sss .input_component {
+  padding: 10px 16px;
+  height: 45px;
+  border-radius: 8px;
+  background: var(--gray_ww);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  cursor: pointer;
+  border: 1px solid var(--white);
+}
+
+.sss .input_component.add {
+  border: 1px solid var(--blue);
+}
+
+.sss .relative {
+  width: 100%;
+  position: relative;
+}
+
+.sss .select {
+  position: absolute;
+  top: 4px;
+  left: 0;
+  width: auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  border-radius: 8px;
+  background: var(--white);
+  box-shadow: 5px 15px 25px rgba(65, 65, 65, 0.2),
+    0px 5px 20px 0px rgba(194, 194, 194, 0.09),
+    0px 10px 6px 0px rgba(221, 221, 224, 0.05),
+    0px 19px 7px 0px rgba(134, 134, 134, 0.01),
+    0px 29px 8px 0px rgba(0, 0, 0, 0);
+  border: 1px solid #d8d8d8;
+  z-index: 2;
+  animation: select 0.2s ease;
+  overflow-x: hidden;
+  height: 200px;
+}
+
+.sss .not_found_data {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+}
+
+@keyframes select {
+  0% {
+    opacity: 0;
+    top: 40px;
+  }
+  100% {
+    opacity: 1;
+    top: 4px;
+  }
+}
+
+.sss .select .absolute_box {
+  width: 100%;
+  border-radius: 6px;
+  padding: 10px 16px;
+  transition: 0.1s ease-in;
+  cursor: pointer;
+  background: transparent;
+}
+
+.sss .select .absolute_box.add {
+  color: white;
+  background: var(--blue);
+}
+
+.sss .select .absolute_box:hover {
+  color: white;
+  background: var(--blue);
+}
+
+.sss .image {
+  transition: 0.2s ease-in-out;
+}
+
+.sss .image.add {
+  transform: rotate(180deg);
+}
+
+.sss .text_input {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--black);
+}

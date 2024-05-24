@@ -1,0 +1,11 @@
+.favorites {
+  width: 100%;
+  padding-top: 30px;
+  padding-bottom: 140px;
+}
+.favorites .title_h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--valuta-, rgba(28, 28, 28, 1));
+  margin: 0 0 30px 0;
+}

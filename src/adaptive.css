@@ -1,0 +1,30 @@
+@media (max-width: 668px) {
+  .photo_auth {
+    display: none;
+  }
+  .choice .block {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr !important;
+    gap: 70px;
+  }
+  .form .block {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 70px;
+  }
+  .authentication-css {
+    display: block !important;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .authentication-css img {
+    width: 125px;
+    margin: 40px;
+  }
+}
+.authentication-css {
+  display: none;
+}

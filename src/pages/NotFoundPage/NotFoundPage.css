@@ -1,0 +1,10 @@
+.not_found_page {
+    width: 100%;
+}
+.not_found_page h1 {
+    margin: 100px 0;
+    text-align: center;
+    font-size: 33px;    
+    font-weight: 300;
+    color: var(--blue);
+}
