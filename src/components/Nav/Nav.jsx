@@ -33,6 +33,7 @@ const Nav = ({ publis }) => {
         <Slider {...settings}>
           {publis.map((el, id) => (
             <a href={el.link} key={id} className="slider_box">
+              
               <img className="banner" src={el.publicity} alt="" />
             </a>
           ))}
