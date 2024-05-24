@@ -107,8 +107,8 @@ const Table = ({ title }) => {
               </div>
             </div>
             <div className="blocks">
-              {bankData?.map((el, index) => (
-                <div key={index} className="grid">
+              {bankData?.map((el, id) => (
+                <div key={id} className="grid">
                   <div className="save">
                     <img
                       onClick={() => handleExchangeClick(el)}

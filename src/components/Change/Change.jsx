@@ -42,8 +42,8 @@ const Change = ({
         </div>
         <div className="change_block">
           <div className="category">
-            {name?.map((el) => (
-              <div>
+            {name?.map((el, id) => (
+              <div key={id}>
                 <div
                   className={`category_box ${
                     el.id === activeCategoryId ? "active" : ""

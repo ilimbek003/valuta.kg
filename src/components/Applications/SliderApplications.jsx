@@ -47,7 +47,6 @@ const SliderApplications = ({
       setModal(false);
     }, 500);
   };
-  console.log(modal);
 
   return (
     <div className="boby-none">

@@ -123,6 +123,7 @@ const Applications = ({ calculate }) => {
                     <div className="offer_blocks">
                       {request?.results?.map((el, id) => (
                         <div
+                          key={id}
                           onClick={() =>
                             navigate(`/applications/${el.user_id}`)
                           }

@@ -22,22 +22,17 @@ const Nav = ({ publis }) => {
     cssEase: "linear",
   };
   useEffect(() => {
-    api
-      .get("/api/ticker/")
-      .then((response) => {
-        setData(response.data);
-      })
-      .then((error) => {
-        console.log(error);
-      });
+    api.get("/api/ticker/").then((response) => {
+      setData(response.data);
+    });
   }, []);
 
   return (
     <div className="nav">
       <div className="container">
         <Slider {...settings}>
-          {publis.map((el) => (
-            <a href={el.link} className="slider_box">
+          {publis.map((el, id) => (
+            <a href={el.link} key={id} className="slider_box">
               <img className="banner" src={el.publicity} alt="" />
             </a>
           ))}
@@ -148,8 +143,8 @@ const Nav = ({ publis }) => {
           </div>
           <div className="rec">
             {publis &&
-              publis?.slice(0, 1).map((el) => (
-                <a href={el.link} className="slider_box">
+              publis?.slice(0, 1).map((el, id) => (
+                <a href={el.link} key={id} className="slider_box">
                   <img className="resize" src={el.publicity} alt="" />
                 </a>
               ))}

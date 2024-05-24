@@ -18,9 +18,9 @@ const Tables = ({ handleExchangeClick, bankData, storedExchanges }) => {
     <div className="blocks-block">
       <div className="slider-container">
         <Slider {...settings}>
-          {bankData?.map((el, index) => (
-            <div style={{ margin: "0 20px" }}>
-              <div key={index} className="grid gap-grid">
+          {bankData?.map((el, id) => (
+            <div key={id} style={{ margin: "0 20px" }}>
+              <div className="grid gap-grid">
                 <div className="save-one">
                   <div className="carob lanes">
                     <img className="logos" src={el.logo} alt="" />
