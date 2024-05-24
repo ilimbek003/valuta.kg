@@ -9,7 +9,6 @@ const Сalculator = ({ calculate }) => {
   const buy_sell_data = [{ text: "Купить" }, { text: "Продать" }];
 
   const [buySell, setBuySell] = useState("Купить");
-
   const [summa, setSumma] = useState();
   const [courseCrypto, setCourseCrypto] = useState([]);
   const [courseCurenc, setCourseCurenc] = useState([]);
@@ -44,7 +43,7 @@ const Сalculator = ({ calculate }) => {
 
   let selectedCrypto = null;
   let fiatPrice = 0;
-  if (summa && crypto_price.length) {
+  if (summa && Array.isArray(crypto_price)) {
     selectedCrypto = crypto_price.find((item) => item.crypto === btc);
     if (selectedCrypto) {
       const rate =
@@ -111,9 +110,13 @@ const Сalculator = ({ calculate }) => {
                 <InputComponent
                   value={btc}
                   setValue={setBtc}
-                  data={courseCurenc && courseCurenc.map((item) => ({
-                    text: item.crypto,
-                  }))}
+                  data={
+                    Array.isArray(courseCurenc)
+                      ? courseCurenc.map((item) => ({
+                          text: item.crypto,
+                        }))
+                      : []
+                  }
                   width={"100%"}
                 />
               </div>
