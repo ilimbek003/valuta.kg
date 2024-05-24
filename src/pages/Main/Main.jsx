@@ -17,7 +17,6 @@ const Main = ({
   name,
   calculate,
 }) => {
-
   return (
     <div className="main">
       <Nav publis={publis} />

@@ -129,7 +129,7 @@ const Table = ({ title }) => {
                           <p
                             className="title"
                             onClick={() =>
-                              navigate(`/exchange-detail/${el.slug}`)
+                              localStorage.getItem("token") ? navigate(`/exchange-detail/${el.slug}`) : navigate("/login")
                             }
                           >
                             {el.exchanger}
