@@ -27,6 +27,7 @@ const SliderApplications = ({
   const navigate = useNavigate();
   const [modal, setModal] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [auth, setAuth] = useState(localStorage.getItem("token"));
 
   const settings = {
     dots: true,
@@ -107,44 +108,59 @@ const SliderApplications = ({
       ) : (
         ""
       )}
-      <Slider {...settings}>
-        {request?.results?.map((el, id) => (
-          <div
-            key={id}
-            onClick={() => navigate(`/applications/${el.user_id}`)}
-            className="boby_block"
-          >
-            <div>
-              <p className="offer_text" style={{ margin: "0 0 20px 0" }}>
-                Участник
-              </p>
-              <div className="flex">
-                <img className="user" src={user} alt="" />
-                <p className="offer_block_title">{el.user}</p>
+      {auth ? (
+        <Slider {...settings}>
+          {request?.results?.map((el, id) => (
+            <div
+              key={id}
+              onClick={() => navigate(`/applications/${el.user_id}`)}
+              className="boby_block"
+            >
+              <div>
+                <p className="offer_text" style={{ margin: "0 0 20px 0" }}>
+                  Участник
+                </p>
+                <div className="flex">
+                  <img className="user" src={user} alt="" />
+                  <p className="offer_block_title">{el.user}</p>
+                </div>
               </div>
-            </div>
-            <div className="flex-flex">
-              <p className="offer_text">Количество</p>
-              <p className="offer_block_text ">{el.total}</p>
-            </div>
-            <div className="flex-flex">
-              <p className="offer_text">Валюта</p>
-              <p className="offer_block_text">{el.crypto}</p>
-            </div>
+              <div className="flex-flex">
+                <p className="offer_text">Количество</p>
+                <p className="offer_block_text ">{el.total}</p>
+              </div>
+              <div className="flex-flex">
+                <p className="offer_text">Валюта</p>
+                <p className="offer_block_text">{el.crypto}</p>
+              </div>
 
-            <div className="flex-flex">
-              <p className="offer_text">По курсу</p>
-              <p className="offer_block_text">${el.course}</p>
-            </div>
-            <div className="flex-flex">
-              <p className="offer_text">Время</p>
-              <p className="offer_block_time">{el.date}</p>
-            </div>
+              <div className="flex-flex">
+                <p className="offer_text">По курсу</p>
+                <p className="offer_block_text">${el.course}</p>
+              </div>
+              <div className="flex-flex">
+                <p className="offer_text">Время</p>
+                <p className="offer_block_time">{el.date}</p>
+              </div>
 
-            <button className="button_form offer_block_btn">{el.title}</button>
+              <button className="button_form offer_block_btn">
+                {el.title}
+              </button>
+            </div>
+          ))}
+        </Slider>
+      ) : (
+        <div className="boby_block body-block">
+          <p>
+            Тут появятся предложения об обмене криптовалюты. Зарегистрируйтесь,
+            чтобы добавить предложения
+          </p>
+          <div className="btns-block">
+            <button className="btns" onClick={() => navigate("/login")}>Войти</button>
+            <button className="btns-white" onClick={() => navigate("/register")}>Регистрация</button>
           </div>
-        ))}
-      </Slider>
+        </div>
+      )}
     </div>
   );
 };

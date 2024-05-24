@@ -196,6 +196,43 @@
     padding: 20px;
     background: var(--gray_ww);
   }
+  .applications .body-block {
+    height: 395px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .applications .body-block p {
+    color: rgba(150, 150, 150, 1);
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+  }
+  .applications .btns-block{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    margin: 20px 0;
+  }
+  .applications .body-block .btns {
+    color: var(--valuta-, rgba(24, 86, 205, 1));
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+  }
+  .applications .body-block .btns-white {
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    background: var(--valuta-, rgba(24, 86, 205, 1));
+    width: 40%;
+    height: 40px;
+    border-radius: 8px;
+    border: none;
+  }
   .applications .slick-prev {
     top: 50px;
     left: 6px;
