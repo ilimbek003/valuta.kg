@@ -5,7 +5,7 @@ import { api } from "../../Api";
 import Loading from "../../components/UI/Loading/Loading";
 import photo_auth from "../../img/photo_auth.svg";
 import { Alert } from "../../components/UI/alert/alert";
-
+import logo from "../../img/logo.png";
 const Login = () => {
   const [visible, setVisible] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -51,6 +51,9 @@ const Login = () => {
 
   return (
     <div className="container">
+      <div className="authentication-css">
+        <img className="lodo" src={logo} alt="" />
+      </div>
       <div className="form">
         <div className="block">
           <form onSubmit={handleSubmit}>

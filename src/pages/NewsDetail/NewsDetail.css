@@ -3,7 +3,7 @@
   padding-top: 30px;
   padding-bottom: 140px;
 }
-.news_detail .a{
+.news_detail .a {
   text-decoration: none;
 }
 
@@ -116,4 +116,21 @@
   font-size: 14px;
   font-weight: 400;
   color: var(--gray);
+}
+
+@media screen and (max-width: 568px) {
+  .news_detail .news_detail_block {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .news_detail .news_detail_block h1 {
+    font-size: 20px;
+  }
+  .news_detail .news_detail_block .title-news-p {
+    margin: 50px 0 0 0;
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--valuta-, rgba(28, 28, 28, 1));
+  }
 }

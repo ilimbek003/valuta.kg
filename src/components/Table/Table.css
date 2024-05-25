@@ -294,4 +294,8 @@
     background: var(--valuta-, rgba(240, 240, 240, 1));
     border-radius: 50%;
   }
+  .table .gap-grid {
+    padding: 20px 20px;
+    margin: 100px 10px;
+  }
 }

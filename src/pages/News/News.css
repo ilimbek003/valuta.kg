@@ -93,3 +93,28 @@
   border: 1px solid var(--blue);
   color: var(--blue);
 }
+
+@media (max-width: 600px) {
+  .news .news_block {
+    margin-top: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    column-gap: 20px;
+    row-gap: 30px;
+  }
+  .news .block_img {
+    width: 110px;
+    height: 110px;
+  }
+  .news .main_news_box {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+  }
+  .news .news_box .title {
+    font-size: 14px;
+    height: 20px;
+  }
+  .news .news_box .text {
+    font-size: 12px;
+  }
+}

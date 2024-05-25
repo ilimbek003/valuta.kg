@@ -19,7 +19,7 @@ const Tables = ({ handleExchangeClick, bankData, storedExchanges }) => {
       <div className="slider-container">
         <Slider {...settings}>
           {bankData?.map((el, id) => (
-            <div key={id} style={{ margin: "0 20px" }}>
+            <div key={id}>
               <div className="grid gap-grid">
                 <div className="save-one">
                   <div className="carob lanes">

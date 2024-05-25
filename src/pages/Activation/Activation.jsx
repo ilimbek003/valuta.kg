@@ -6,6 +6,7 @@ import Loading from "../../components/UI/Loading/Loading";
 import navigateImage from "../../img/navigate.svg";
 import photo_auth from "../../img/photo_auth.svg";
 import { Alert } from "../../components/UI/alert/alert";
+import logo from "../../img/logo.png";
 
 const Activation = () => {
   const navigate = useNavigate();
@@ -71,9 +72,19 @@ const Activation = () => {
   return (
     <div className="container">
       <div className="form">
+        <div className="authentication-css authentication-grid">
+          <img
+            className="block-img-left"
+            onClick={() => navigate(-1)}
+            src={navigateImage}
+            alt=""
+          />
+          <img className="lodo" src={logo} alt="" />
+          <div className="with"></div>
+        </div>
         <div className="block">
           <img
-            className="absolute"
+            className="absolute none-img"
             onClick={() => navigate(-1)}
             src={navigateImage}
             alt=""

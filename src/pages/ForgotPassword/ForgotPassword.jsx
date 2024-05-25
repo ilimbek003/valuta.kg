@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { api } from "../../Api";
 import navigateImage from "../../img/navigate.svg";
 import photo_auth from "../../img/photo_auth.svg";
+import logo from "../../img/logo.png";
 
 const ForgotPassword = () => {
   const [loading, setLoading] = useState(false);
@@ -39,9 +40,19 @@ const ForgotPassword = () => {
   return (
     <div className="container">
       <div className="form">
+        <div className="authentication-css authentication-grid">
+          <img
+            className="block-img-left"
+            onClick={() => navigate(-1)}
+            src={navigateImage}
+            alt=""
+          />
+          <img className="lodo" src={logo} alt="" />
+          <div className="with"></div>
+        </div>
         <div className="block">
           <img
-            className="absolute"
+            className="absolute none-img"
             onClick={() => navigate(-1)}
             src={navigateImage}
             alt=""

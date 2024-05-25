@@ -35,6 +35,7 @@ const NewsDetail = () => {
           </div>
           <div>
             <div className="news_block">
+              <p className="title-news-p">Еще новости</p>
               {news.similar_news?.slice(0, 3).map((el, index) => (
                 <a href={`/news/${el.slug}`} className="a">
                   <div key={index} className="news_box">

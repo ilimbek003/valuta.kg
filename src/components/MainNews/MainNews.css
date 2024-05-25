@@ -100,6 +100,21 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
     column-gap: 20px;
-    row-gap: 30px;
+    row-gap: 0;
+  }
+  .main_news .block_img {
+    width: 125px;
+    height: 125px;
+  }
+  .main_news .main_news_box {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+  }
+  .main_news .main_news_box .title {
+    height: 20px;
+    font-size: 14px;
+  }
+  .main_news .main_news_box .text {
+    font-size: 12px;
   }
 }

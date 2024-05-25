@@ -60,13 +60,25 @@ const Register = () => {
   return (
     <div className="container">
       <div className="form">
-        <div className="authentication-css">
+        <div className="authentication-css authentication-grid">
+          <img
+            className="block-img-left"
+            onClick={() => navigate(-1)}
+            src={navigateImage}
+            alt=""
+          />
           <img className="lodo" src={lodo} alt="" />
+          <div className="with"></div>
         </div>
         <div className="block">
           <form onSubmit={handleSubmit} className="register_from">
             <div className="login_form_head">
-              <img onClick={() => navigate(-1)} src={navigateImage} alt="" />
+              <img
+                className="none-img"
+                onClick={() => navigate(-1)}
+                src={navigateImage}
+                alt=""
+              />
               <span className="text_center">
                 Регистрация - {name === "buyer" && "Покупатель"}
                 {name === "exchanger" && "Обменник"}

@@ -190,8 +190,7 @@
     display: block;
   }
   .applications .boby_block {
-    margin-top: 100px;
-    width: 100%;
+    margin: 100px 10px 0;
     border-radius: 20px;
     padding: 20px;
     background: var(--gray_ww);
@@ -209,7 +208,7 @@
     font-weight: 600;
     text-align: center;
   }
-  .applications .btns-block{
+  .applications .btns-block {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -323,5 +322,11 @@
     color: var(--gray, rgba(154, 154, 154, 1));
     font-size: 14px;
     font-weight: 400;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .applications .boby-left-raith {
+    margin: 0 20px;
   }
 }
