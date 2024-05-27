@@ -239,3 +239,20 @@
   align-items: center;
   justify-content: center;
 }
+
+@media screen and (max-width: 700px) {
+  .exchange_detail .exchange_detail_block_one {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .exchange_detail .exchange_detail_block_two {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .exchange_detail .stacks_block div {
+   padding: 0;
+  }
+}

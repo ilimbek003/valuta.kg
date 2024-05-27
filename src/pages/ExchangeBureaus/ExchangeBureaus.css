@@ -31,7 +31,7 @@
   border-radius: 16px;
   cursor: pointer;
 }
-.exchange_bureaus .image_logo_bureaus{
+.exchange_bureaus .image_logo_bureaus {
   width: 200px;
   height: 100px;
 }
@@ -107,4 +107,34 @@
   bottom: 0;
   margin: auto;
   left: 16px;
+}
+
+@media screen and (max-width: 600px) {
+  .exchange_bureaus {
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .exchange_bureaus .image_logo_bureaus {
+    width: 140px;
+    height: 100px;
+  }
+  .exchange_bureaus .bureaus_box .title {
+    width: 100%;
+    font-size: 18px;
+    white-space: wrap;
+  }
+  .exchange_bureaus .bureaus_box .flex {
+    gap: 0;
+  }
+  .map-container {
+    display: none;
+  }
+  .map-container-bureaus {
+    position: relative  ;
+    top: 0;
+    height: 50vh;
+    margin: 0 0 40px 0;
+  }
 }

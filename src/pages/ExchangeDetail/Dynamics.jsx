@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import ChartLoader from "../../components/UI/ChartLoader/ChartLoader";
 import Chart from "react-apexcharts";
 
-const Dynamics = ({currency}) => {
+const Dynamics = ({ currency }) => {
   const [isChartsLoaded, setChartsLoaded] = useState(false);
   useEffect(() => {
     const fetchData = async () => {
@@ -35,6 +35,9 @@ const Dynamics = ({currency}) => {
                         colors: ["red"],
                       },
                       dataLabels: { enabled: false },
+                      dataLabels: { enabled: false },
+                      legend: { show: false },
+                      xaxis: { labels: { show: false } },
                     }}
                     series={[
                       {

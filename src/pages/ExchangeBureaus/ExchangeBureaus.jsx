@@ -33,7 +33,7 @@ const ExchangeBureaus = () => {
       mapInstance.remove();
     };
   });
- 
+
   return (
     <div className="exchange_bureaus">
       <div className="bureaus_block">
@@ -45,6 +45,13 @@ const ExchangeBureaus = () => {
             type="text"
             placeholder="Поиск обменных бюро"
           />
+        </div>
+        <div className="map-container-bureaus">
+          <div
+            id="map"
+            style={{ width: "100%", height: "100%" }}
+            className="map"
+          ></div>
         </div>
         {geo
           .filter((obj) => {
@@ -59,7 +66,11 @@ const ExchangeBureaus = () => {
               </div>
               <div className="flex">
                 <p
-                  onClick={() => localStorage.getItem("token") ? navigate(`/exchange-detail/${el.slug}`) : navigate(`/login`)}
+                  onClick={() =>
+                    localStorage.getItem("token")
+                      ? navigate(`/exchange-detail/${el.slug}`)
+                      : navigate(`/login`)
+                  }
                   className="title"
                 >
                   {el.name}

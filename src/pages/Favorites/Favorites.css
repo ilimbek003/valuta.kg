@@ -9,3 +9,18 @@
   color: var(--valuta-, rgba(28, 28, 28, 1));
   margin: 0 0 30px 0;
 }
+.favorites-block {
+  display: none;
+}
+@media screen and (max-width: 600px) {
+  .favorites-none {
+    display: none;
+  }
+  .favorites-block {
+    display: block;
+  }
+  .favorites .gap-grid {
+    padding: 20px 20px;
+    margin: 20px 0;
+  }
+}

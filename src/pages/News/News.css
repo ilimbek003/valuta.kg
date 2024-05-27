@@ -24,7 +24,7 @@
 }
 
 .news .news_box img {
-  width: 170px;
+  width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 14px;
@@ -103,12 +103,15 @@
     row-gap: 30px;
   }
   .news .block_img {
-    width: 110px;
-    height: 110px;
+    width: 125px;
+    height: 125px;
   }
-  .news .main_news_box {
+  .news .news_box {
     display: grid;
-    grid-template-columns: 110px 1fr;
+    grid-template-columns: 130px 1fr;
+    align-items: center;
+    height: 160px;
+    cursor: pointer;
   }
   .news .news_box .title {
     font-size: 14px;

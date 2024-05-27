@@ -74,7 +74,7 @@ function App() {
     api.get("/api/news").then((response) => {
       setData(response.data);
     });
-  }, []);
+  }, []); 
   useEffect(() => {
     api.get("/api/public").then((response) => {
       setPublis(response.data);

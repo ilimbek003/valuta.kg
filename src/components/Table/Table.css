@@ -268,7 +268,10 @@
   font-size: 10px !important;
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 520px) {
+  .slick-next:before {
+    content: "→" !important;
+  }
   .table .slick-prev {
     top: 50px;
     left: 6px;
@@ -296,6 +299,6 @@
   }
   .table .gap-grid {
     padding: 20px 20px;
-    margin: 100px 10px;
+    margin: 100px 10px 0 10px;
   }
 }

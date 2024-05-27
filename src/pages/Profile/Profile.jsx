@@ -128,7 +128,7 @@ const Profile = ({ profiles, handleEditProfile }) => {
                   </div>
                 </div>
                 <p className="text g">{profiles?.exchanger?.description}</p>
-                <div className="between">
+                <div className="buttons-block-star">
                   <p className="star">
                     <img className="icon" src={star} alt="" />{" "}
                     {profiles?.exchanger?.license_num}
@@ -154,19 +154,19 @@ const Profile = ({ profiles, handleEditProfile }) => {
               </div>
             </div>
             <div className="column">
-              <div className="between">
+              <div className="between-users">
                 <p className="text g">Имя</p>
                 <div className="texting">{profiles?.user?.name}</div>
               </div>
-              <div className="between">
+              <div className="between-users">
                 <p className="text g">Номер телефона</p>
                 <div className="texting">{profiles?.user?.phone}</div>
               </div>
-              <div className="between">
+              <div className="between-users">
                 <p className="text g">Пароль</p>
                 <div className="texting">{profiles?.user?.password}</div>
               </div>
-              <div className="between">
+              <div className="between-users">
                 <p onClick={() => setModalLogout(true)} className="text red">
                   Выйти с аккаунта
                 </p>
@@ -211,6 +211,56 @@ const Profile = ({ profiles, handleEditProfile }) => {
                   <p className="offer_block_text">{el.sell}</p>
                   <p className="offer_block_time">{el.dead_datetime}</p>
                   <p className="offer_block_time">{el.dead_time}</p>
+                  <div className="flex">
+                    <img
+                      onClick={() =>
+                        setModalDeleteCoin(true) ||
+                        localStorage.setItem("id_corse", el.id)
+                      }
+                      className="deleted"
+                      src={deleted}
+                      alt=""
+                    />
+                    <button
+                      onClick={() =>
+                        navigate("/dashboard/up-date-coin") ||
+                        localStorage.setItem("id_corse", el.id) ||
+                        localStorage.setItem("name", el.crypto)
+                      }
+                      className="button_form white"
+                    >
+                      Обновить курс
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div>
+              {profiles?.currency?.map((el, id) => (
+                <div className="offer_blocks-edit">
+                  <div className="flex-edit-offer">
+                    <p className="offer_text">Валюты</p>
+                    <div className="flex">
+                      <img className="btc" src={el.img} alt="" />
+                      <p className="offer_block_title">{el.crypto}</p>
+                    </div>
+                  </div>
+                  <div className="flex-edit-offer">
+                    <p className="offer_text">Покупка</p>
+                    <p className="offer_block_text">{el.buy}</p>
+                  </div>
+                  <div className="flex-edit-offer">
+                    <p className="offer_text">Продажа</p>
+                    <p className="offer_block_text">{el.sell}</p>
+                  </div>
+                  <div className="flex-edit-offer">
+                    <p className="offer_text">Таймер до</p>
+                    <p className="offer_block_time">{el.dead_datetime}</p>
+                  </div>
+                  <div className="flex-edit-offer">
+                    <p className="offer_text">Время</p>
+                    <p className="offer_block_time">{el.dead_time}</p>
+                  </div>
                   <div className="flex">
                     <img
                       onClick={() =>

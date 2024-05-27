@@ -133,4 +133,7 @@
     font-size: 20px;
     color: var(--valuta-, rgba(28, 28, 28, 1));
   }
+  .news_detail .news_box .title {
+    margin-bottom: 0;
+  }
 }
