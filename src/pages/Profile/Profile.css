@@ -67,8 +67,7 @@
 }
 
 .profile .title {
-  height: 30px;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 500;
   color: var(--black);
   margin-bottom: 15px;

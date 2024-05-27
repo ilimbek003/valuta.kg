@@ -136,9 +136,7 @@ const Header = () => {
               {localStorage.getItem("user_type") === "Buyer" ? (
                 <NavLink to="/dashboard/cabinet">
                   <div className="flex-mob">
-                    <NavLink
-                      to="/dashboard/favorites"
-                    >
+                    <NavLink to="/dashboard/favorites">
                       <button className="favorites">
                         <img src={star} alt="" />
                       </button>
@@ -149,9 +147,7 @@ const Header = () => {
               ) : (
                 <NavLink to="/dashboard/home">
                   <div className="flex-mob">
-                    <NavLink
-                      to="/dashboard/favorites"
-                    >
+                    <NavLink to="/dashboard/favorites">
                       <button className="favorites">
                         <img src={star} alt="" />
                       </button>

@@ -96,6 +96,11 @@
     width: 90% !important;
     min-width: 90% !important;
   }
+
+
+  .fixet_modal .modal::-webkit-scrollbar {
+    width: 0px;
+  }
   .fixet_modal .close {
     position: absolute;
     top: 30px !important;

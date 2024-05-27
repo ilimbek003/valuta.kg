@@ -16,6 +16,7 @@ const Accounts = ({
     password: "",
   });
   const [loading, setLoading] = useState(false);
+  
   useEffect(() => {
     if (profiles) {
       setDataAccount({
@@ -27,16 +28,7 @@ const Accounts = ({
     }
   }, [profiles]);
 
-  useEffect(() => {
-    if (profiles) {
-      setDataAccount({
-        ...dataAccount,
-        name: profiles?.name || "",
-        number: profiles?.phone || "",
-        password: profiles?.password || "",
-      });
-    }
-  }, [profiles]);
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
