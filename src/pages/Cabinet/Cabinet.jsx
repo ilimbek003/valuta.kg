@@ -18,7 +18,7 @@ const Cabinet = ({ profiles, handleEditProfile }) => {
   const [list, setlist] = useState([]);
   const handleListRequest = () => {
     api
-      .get("/api/request-list", {
+      .get("/request-list", {
         headers: {
           Authorization: `Token ${localStorage.getItem("token")}`,
         },

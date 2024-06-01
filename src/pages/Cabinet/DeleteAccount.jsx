@@ -6,7 +6,7 @@ import { Alert } from "../../components/UI/alert/alert";
 const DeleteAccount = ({ setModalDelete }) => {
   const handleDelete = async (id) => {
     try {
-      const response = await api.delete(`/api/requests-update/${id}`);
+      const response = await api.delete(`/requests-update/${id}`);
       if (response.data.response === true) {
         Alert("success", response.data.message);
         setModalDelete(false);

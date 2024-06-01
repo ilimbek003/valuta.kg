@@ -32,7 +32,7 @@ const Applications = ({ calculate }) => {
     if (local) {
       api
         .get(
-          `/api/request/filter/?title=${buySell}&summa=${course}&crypto=${id}&course=${payment}&currency=${currency}`,
+          `/request/filter/?title=${buySell}&summa=${course}&crypto=${id}&course=${payment}&currency=${currency}`,
           {
             headers: {
               Authorization: `Token ${local}`,

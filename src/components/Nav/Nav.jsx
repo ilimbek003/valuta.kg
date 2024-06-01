@@ -22,7 +22,7 @@ const Nav = ({ publis }) => {
     cssEase: "linear",
   };
   useEffect(() => {
-    api.get("/api/ticker/").then((response) => {
+    api.get("/ticker/").then((response) => {
       setData(response.data);
     });
   }, []);

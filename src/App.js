@@ -45,24 +45,24 @@ function App() {
   const [name, setName] = useState([]);
   const [calculate, setCalculate] = useState([]);
   useEffect(() => {
-    api.get("/api/crypto/сalculate/").then((response) => {
+    api.get("/crypto/сalculate/").then((response) => {
       setCalculate(response.data);
     });
   }, []);
 
   useEffect(() => {
-    api.get("/api/crypto-name").then((response) => {
+    api.get("/crypto-name").then((response) => {
       setName(response.data);
     });
   }, []);
 
   const handleChart = (id = null) => {
     if (!id) {
-      api.get(`/api/dynamic/${activeCategoryId}`).then((response) => {
+      api.get(`/dynamic/${activeCategoryId}`).then((response) => {
         setDynamic(response.data);
       });
     } else {
-      api.get(`/api/dynamic/${id}`).then((response) => {
+      api.get(`/dynamic/${id}`).then((response) => {
         setDynamic(response.data);
       });
     }
@@ -71,12 +71,12 @@ function App() {
     handleChart();
   }, []);
   useEffect(() => {
-    api.get("/api/news").then((response) => {
+    api.get("/news").then((response) => {
       setData(response.data);
     });
   }, []); 
   useEffect(() => {
-    api.get("/api/public").then((response) => {
+    api.get("/public").then((response) => {
       setPublis(response.data);
     });
   }, []);

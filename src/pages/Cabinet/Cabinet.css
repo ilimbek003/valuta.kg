@@ -117,3 +117,65 @@
   font-weight: 400;
   color: var(--valuta-, rgba(49, 49, 49, 1));
 }
+.cabinet .flex-delte {
+  display: none;
+}
+.cabinet .flex-delte-one {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .cabinet .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .cabinet .col {
+    display: flex;
+    flex-direction: row !important;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 20px 0 0 0;
+  }
+  .cabinet .grid_two {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .cabinet .flex-delte {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+  .cabinet .flex-delte-one {
+    display: none;
+  }
+  .cabinet {
+    padding: 30px 0;
+  }
+}
+
+@media screen and (max-width: 510px) {
+  .between.al {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+  .between.al button {
+    margin: 10px 0 0 0;
+  }
+  .cabinet .title {
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .cabinet .form_password {
+    margin-top: 30px ;
+    width: 100%;
+  }
+}

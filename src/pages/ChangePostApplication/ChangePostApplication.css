@@ -32,3 +32,15 @@
   object-position: center;
   margin-bottom: 20px;
 }
+
+@media screen and (max-width: 768px) {
+  .change_post_application .grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .change_post_application {
+    padding: 30px 0 30px 0;
+  }
+}

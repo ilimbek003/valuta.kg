@@ -42,7 +42,7 @@ const PostApplication = ({ calculate }) => {
       data.append("total", dataApplication.quantity);
       data.append("payment", dataApplication.payment);
       data.append("location", dataApplication.place_of_transaction);
-      const response = await api.post("/api/request/", data, {
+      const response = await api.post("/request/", data, {
         headers: {
           Authorization: `Token ${localStorage.getItem("token")}`,
         },

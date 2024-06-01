@@ -88,7 +88,7 @@ const Cryptocurrencies = () => {
   const navigate = useNavigate();
   const [data, setData] = useState([]);
   useEffect(() => {
-    api.get("/api/crypto").then((response) => setData(response.data));
+    api.get("/crypto").then((response) => setData(response.data));
   }, []);
   return (
     <div className="cryptocurrencies">

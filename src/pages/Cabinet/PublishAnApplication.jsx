@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { api } from "../../Api";
 import Modal from "../../components/UI/Modal/Modal";
 import { Alert } from "../../components/UI/alert/alert";
-
+import { AiOutlineDelete } from "react-icons/ai";
 const PublishAnApplication = ({
   setModalDeleteApplication,
   modalDeleteApplication,
@@ -13,7 +13,7 @@ const PublishAnApplication = ({
   const navigate = useNavigate();
   const handleDelete = (id) => {
     api
-      .delete(`/api/request-update/${id}/`, {
+      .delete(`/request-update/${id}/`, {
         header: {
           Authorization: `Token ${localStorage.getItem("token")}`,
         },
@@ -46,7 +46,7 @@ const PublishAnApplication = ({
               <h2 className="title">Заявка {el.id}</h2>
               <div className="sell_buy">{el.title}</div>
             </div>
-            <div className="flex">
+            <div className="flex-delte-one">
               <p
                 onClick={() => setModalDeleteApplication(true)}
                 className="text red"
@@ -104,6 +104,24 @@ const PublishAnApplication = ({
                   <div>
                     <button className="texting">{el.date}</button>
                   </div>
+                </div>
+                <div className="flex-delte">
+                  <p
+                    onClick={() => setModalDeleteApplication(true)}
+                    className="text red"
+                  >
+                    <AiOutlineDelete color="var(--red)" size={28}/>
+                  </p>
+                  <button
+                    onClick={() =>
+                      navigate("/dashboard/change-post-application") ||
+                      localStorage.setItem("request_id", el.id)
+                    }
+                    style={{ width: 160 }}
+                    className="button_form white"
+                  >
+                    Редактировать
+                  </button>
                 </div>
               </div>
             </div>

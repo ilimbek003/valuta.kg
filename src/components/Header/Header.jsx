@@ -159,11 +159,8 @@ const Header = () => {
             </>
           ) : (
             <>
-              <NavLink to="/login">
-                <button className="button_form login">Войти</button>
-              </NavLink>
-              <NavLink to="/register">
-                <button className="button_form">Регистрация</button>
+              <NavLink to="/login" style={{ textDecoration: "none" }}>
+                <button className="button_form">Войти</button>
               </NavLink>
             </>
           )}
