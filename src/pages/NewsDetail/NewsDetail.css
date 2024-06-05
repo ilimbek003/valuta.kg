@@ -26,7 +26,11 @@
   flex-direction: column;
   gap: 24px;
 }
-
+.news_detail .title-news-detail {
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--black);
+}
 .news_detail h2 {
   margin-top: 40px;
   font-size: 24px;
@@ -36,7 +40,7 @@
 
 .news_detail .desc {
   margin-top: 16px;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
   color: var(--black_w);
 }

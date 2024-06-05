@@ -40,9 +40,9 @@
 }
 
 .news .news_box .title {
-  height: 60px;
-  font-size: 18px;
-  font-weight: 600;
+  margin: 0 0 20px 0;
+  font-size: 16px;
+  font-weight: 700;
   line-height: 20px;
   color: var(--blue);
   text-decoration: underline;
@@ -53,7 +53,7 @@
 
 .news .news_box .text {
   height: 56px;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
   line-height: 18px;
   color: var(--black_w);

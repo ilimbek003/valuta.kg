@@ -21,7 +21,7 @@ const NewsDetail = () => {
       <div className="container">
         <div className="news_detail_block">
           <div>
-            <h1>{news.news?.title}</h1>
+            <h1 className="title-news-detail">{news.news?.title}</h1>
             <div className="date">
               <p>{news.news?.data}</p>
               <p>{news.news?.user}</p>

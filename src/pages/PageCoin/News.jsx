@@ -15,7 +15,7 @@ const News = ({ data }) => {
           >
             <img src={el.image} alt="" />
             <div className="flex">
-              <p className="title">{el.title}</p>
+              <p className="titlees">{el.title}</p>
               <div>
                 <p
                   className="text"
