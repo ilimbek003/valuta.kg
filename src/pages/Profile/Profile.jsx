@@ -80,18 +80,25 @@ const Profile = ({ profiles, handleEditProfile }) => {
 
   return (
     <div className="profile">
-      {/* {verification && (
-        <ModalDashbosrd
-          count={count}
-          add_photo={add_photo}
-          setCount={setCount}
-          setEmpty={setEmpty}
-          timoutImage={timoutImage}
-          setVerification={setVerification}
-          dataCompanies={dataCompanies}
-          setDataCompanies={setDataCompanies}
-        />
-      )} */}
+      {profiles?.user?.is_active === false ? (
+        ""
+      ) : (
+        <div>
+          {verification && (
+            <ModalDashbosrd
+              count={count}
+              add_photo={add_photo}
+              setCount={setCount}
+              setEmpty={setEmpty}
+              timoutImage={timoutImage}
+              setVerification={setVerification}
+              dataCompanies={dataCompanies}
+              setDataCompanies={setDataCompanies}
+              handleEditProfile={handleEditProfile}
+            />
+          )}
+        </div>
+      )}
       <div className="container">
         <h1>Личный кабинет</h1>
         <div className="grid d">

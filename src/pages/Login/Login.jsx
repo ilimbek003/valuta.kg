@@ -26,8 +26,10 @@ const Login = () => {
       if (response.data.response === true) {
         if (response.data.user === "Exchanger") {
           navigate("/dashboard/home");
+          localStorage.setItem("user", response.data.user);
         } else {
           navigate("/dashboard/cabinet");
+          localStorage.setItem("user", response.data.user);
         }
         const { token } = response.data;
         localStorage.setItem("token", token);

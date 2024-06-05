@@ -30,6 +30,7 @@ const PostApplication = ({ calculate }) => {
     payment: payment,
     place_of_transaction: "",
     terms_of_a_transaction: "",
+    phone: "",
   });
   const handleApplication = async (e) => {
     e.preventDefault();
@@ -42,6 +43,7 @@ const PostApplication = ({ calculate }) => {
       data.append("total", dataApplication.quantity);
       data.append("payment", dataApplication.payment);
       data.append("location", dataApplication.place_of_transaction);
+      data.append("phone", dataApplication.phone);
       const response = await api.post("/request/", data, {
         headers: {
           Authorization: `Token ${localStorage.getItem("token")}`,
@@ -125,6 +127,22 @@ const PostApplication = ({ calculate }) => {
               </div>
               <div>
                 <div className="input_box">
+                  <label className="label_form">Номер</label>
+                  <input
+                    className="input_form"
+                    value={dataApplication.phone}
+                    onChange={(e) =>
+                      setDataApplication({
+                        ...dataApplication,
+                        phone: e.target.value,
+                      })
+                    }
+                    type="text"
+                    placeholder="Введите номер телефона"
+                    required
+                  />
+                </div>
+                <div className="input_box">
                   <label className="label_form">Место сделки</label>
                   <input
                     className="input_form"
@@ -145,7 +163,7 @@ const PostApplication = ({ calculate }) => {
                     Условия сделки (до 500 символов)
                   </label>
                   <textarea
-                    style={{ height: "100%" }}
+                    style={{ height: "140px" }}
                     className="input_form"
                     value={dataApplication.terms_of_a_transaction}
                     onChange={(e) =>

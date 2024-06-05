@@ -158,6 +158,12 @@
   border: 1px solid var(--blue);
   background: transparent;
 }
+.applications .offer_block_btnsesion {
+  color: var(--blue);
+  border: 1px solid var(--blue);
+  background: transparent;
+  cursor: not-allowed;
+}
 
 .applications .user {
   width: 44px;

@@ -29,7 +29,7 @@ const PageCoin = ({ data }) => {
   }, []);
 
   const handleCharts = () => {
-    api.get(`/api/ticker/${slug}/${open2}`).then((response) => {
+    api.get(`/ticker/${slug}/${open2}`).then((response) => {
       setOpen(response.data);
     });
   };

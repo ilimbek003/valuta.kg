@@ -72,7 +72,7 @@ const ChangePostApplication = () => {
       data.append("payment", dataApplication.payment);
       data.append("location", dataApplication.place_of_transaction);
       const response = await api.patch(
-        `/api/request-update/${localStorage.getItem("request_id")}/`,
+        `/request-update/${localStorage.getItem("request_id")}/`,
         data,
         {
           headers: {

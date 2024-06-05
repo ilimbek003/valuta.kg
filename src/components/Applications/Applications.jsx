@@ -125,7 +125,9 @@ const Applications = ({ calculate }) => {
                         <div
                           key={id}
                           onClick={() =>
-                            navigate(`/applications/${el.user_id}`)
+                            el.user_id
+                              ? navigate(`/applications/${el.user_id}`)
+                              : ""
                           }
                           className="offer_block"
                         >
@@ -137,7 +139,13 @@ const Applications = ({ calculate }) => {
                           <p className="offer_block_text">{el.crypto}</p>
                           <p className="offer_block_text">${el.course}</p>
                           <p className="offer_block_time">{el.date}</p>
-                          <button className="button_form offer_block_btn">
+                          <button
+                            className={
+                              el.user_id
+                                ? "button_form offer_block_btn"
+                                : "button_form offer_block_btnsesion"
+                            }
+                          >
                             {el.title}
                           </button>
                         </div>

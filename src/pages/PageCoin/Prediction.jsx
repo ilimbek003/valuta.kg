@@ -8,7 +8,7 @@ const Prediction = ({ slug, open, handleCharts }) => {
   const copyTextToClipboard = (id) => {
     api
       .post(
-        `/api/like/${id}/`,
+        `/like/${id}/`,
         { id },
         {
           headers: {
@@ -26,7 +26,7 @@ const Prediction = ({ slug, open, handleCharts }) => {
   const copyTextToClipboard2 = (id) => {
     api
       .post(
-        `/api/dislike/${id}/`,
+        `/dislike/${id}/`,
         { id },
         { headers: { Authorization: `Token ${localStorage.getItem("token")}` } }
       )
@@ -39,17 +39,25 @@ const Prediction = ({ slug, open, handleCharts }) => {
   };
 
   const handleLike = () => {
-    api.get(`/api/like-percentage/${slug}`).then((response) => {
-      setLike(response.data);
-    });
+    api
+      .get(`/like-percentage/${slug}`, {
+        headers: { Authorization: `Token ${localStorage.getItem("token")}` },
+      })
+      .then((response) => {
+        setLike(response.data);
+      });
   };
   const handelDelete = (id) => {
-    api.delete(`/api/dislike/${id}`).then((response) => {
-      if (response.data.response === true) {
-        handleCharts();
-        Alert("success", response.data.message);
-      }
-    });
+    api
+      .delete(`/dislike/${id}`, {
+        headers: { Authorization: `Token ${localStorage.getItem("token")}` },
+      })
+      .then((response) => {
+        if (response.data.response === true) {
+          handleCharts();
+          Alert("success", response.data.message);
+        }
+      });
   };
   useEffect(() => {
     handleLike();
@@ -64,22 +72,22 @@ const Prediction = ({ slug, open, handleCharts }) => {
         </p>
         <div className="grid">
           <div
-            className={
-              like.response === true ? "image_emoji active" : "image_emoji"
-            }
+            className={like.like ? "image_emoji active" : "image_emoji"}
             onClick={() =>
-              copyTextToClipboard(open?.crypto?.id) || handleLike()
+              copyTextToClipboard(open?.crypto?.id) ||
+              handleLike() ||
+              handelDelete(open?.crypto?.id)
             }
           >
             <img src={fire} alt="" />
             {like.like}
           </div>
           <div
-            className={
-              like.response === true ? "image_emoji active" : "image_emoji"
-            }
+            className={like.dislike ? "image_emoji active" : "image_emoji"}
             onClick={() =>
-              copyTextToClipboard2(open?.crypto?.id) || handleLike()
+              copyTextToClipboard2(open?.crypto?.id) ||
+              handleLike() ||
+              handelDelete(open?.crypto?.id)
             }
           >
             <img src={fu} alt="" />

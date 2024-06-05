@@ -17,7 +17,7 @@ import News from "./pages/News/News";
 import NewsDetail from "./pages/NewsDetail/NewsDetail";
 import History from "./pages/History/History";
 
-import ExchangeBureaus from "./pages/ExchangeBureaus/ExchangeBureaus";
+import  ExchangeBureaus from "./pages/ExchangeBureaus/ExchangeBureaus";
 import ExchangeDetail from "./pages/ExchangeDetail/ExchangeDetail";
 import PageCoin from "./pages/PageCoin/PageCoin";
 import Cryptocurrencies from "./pages/Cryptocurrencies/Cryptocurrencies";

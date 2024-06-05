@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Modal from "../../components/UI/Modal/Modal";
 import { api } from "../../Api";
 import timoutImage from "../../img/timout.svg";
+import Loading from "../../components/UI/Loading/Loading";
 
 const ModalDashbosrd = ({
   count,
@@ -12,10 +13,12 @@ const ModalDashbosrd = ({
   setVerification,
   dataCompanies,
   setDataCompanies,
+  handleEditProfile,
 }) => {
   const [verificationValue, setVerificationValue] = useState({
     logo: null,
   });
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
     if (dataCompanies.logo) {
       const image = dataCompanies.logo;
@@ -29,6 +32,7 @@ const ModalDashbosrd = ({
   }, [dataCompanies]);
   const sendDataToServer = async (e) => {
     e.preventDefault();
+    setLoading(true);
     try {
       const formData = new FormData();
       formData.append("logo", verificationValue.logo);
@@ -44,8 +48,13 @@ const ModalDashbosrd = ({
           "Content-Type": "multipart/form-data",
         },
       });
+      if (response.data.response === true) {
+        setLoading(false);
+        handleEditProfile();
+      }
       console.log("Ответ сервера:", response);
     } catch (error) {
+      setLoading(false);
       console.error("Ошибка при отправке данных на сервер:", error);
     }
   };
@@ -69,13 +78,13 @@ const ModalDashbosrd = ({
                   Данные
                 </p>
               </div>
-              <div className={`line ${count.first && "active"}`}></div>
+              {/* <div className={`line ${count.first && "active"}`}></div>
               <div className={`verification_box ${count.second && "active"}`}>
                 3{" "}
                 <p className={`absolute_text ${count.second && "active"}`}>
                   Верификация
                 </p>
-              </div>
+              </div> */}
             </div>
           </>
         )}
@@ -122,7 +131,11 @@ const ModalDashbosrd = ({
               </form>
             )
           ) : (
-            <form style={{ width: 850 }} className="form_password">
+            <form
+              onSubmit={sendDataToServer}
+              style={{ width: 850 }}
+              className="form_password"
+            >
               <div className="grid">
                 <div>
                   <div className="input_box">
@@ -254,13 +267,14 @@ const ModalDashbosrd = ({
                 </div>
               </div>
               <button
-                onClick={() => setCount({ ...count, second: true })}
+                // onClick={() => setCount({ ...count, second: true })}
                 style={{
                   marginTop: 20,
                 }}
+                type="submit"
                 className="button_form"
               >
-                Далее
+                {loading ? <Loading /> : "Далее"}
               </button>
             </form>
           )
@@ -348,6 +362,11 @@ const ModalDashbosrd = ({
               style={{
                 marginTop: 20,
               }}
+              disabled={
+                !dataCompanies.name ||
+                !dataCompanies.logo ||
+                !verificationValue.desc
+              }
               className="button_form"
             >
               Далее

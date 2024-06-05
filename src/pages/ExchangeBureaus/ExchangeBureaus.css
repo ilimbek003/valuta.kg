@@ -5,7 +5,7 @@
   grid-template-columns: 1fr 2fr;
 }
 
-.map-container {
+.exchange_bureaus .map-container {
   position: sticky;
   top: 0;
   height: 100vh;
@@ -80,13 +80,13 @@
   color: var(--blue);
 }
 
-.exchange_bureaus .relative {
+.exchange-bureaus-map .relative {
   position: relative;
   width: 100%;
   margin-bottom: 20px;
 }
 
-.exchange_bureaus .relative input {
+.exchange-bureaus-map .relative input {
   height: 45px;
   outline: none;
   border: none;
@@ -101,7 +101,7 @@
   color: var(--gray_g);
 }
 
-.exchange_bureaus .search {
+.exchange-bureaus-map .search {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -109,12 +109,21 @@
   left: 16px;
 }
 
+.exchange-bureaus-map .one {
+  display: none;
+}
+
 @media screen and (max-width: 600px) {
-  .exchange_bureaus {
+  .exchange-bureaus-map {
     width: 100%;
     min-height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr;
+    padding: 20px;
+    background: var(--gray_ww);
+  }
+  .exchange_bureaus {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 0;
   }
   .exchange_bureaus .image_logo_bureaus {
     width: 140px;
@@ -128,13 +137,18 @@
   .exchange_bureaus .bureaus_box .flex {
     gap: 0;
   }
-  .map-container {
+  .exchange-bureaus-map .one {
+    display: block;
+  }
+  .exchange-bureaus-map .twos-er {
     display: none;
   }
-  .map-container-bureaus {
-    position: relative  ;
+  .exchange_bureaus .map-container {
+    position: relative;
     top: 0;
     height: 50vh;
-    margin: 0 0 40px 0;
+  }
+  .exchange_bureaus .bureaus_block {
+    padding: 20px 0 0 0;
   }
 }

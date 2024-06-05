@@ -35,66 +35,70 @@ const ExchangeBureaus = () => {
   });
 
   return (
-    <div className="exchange_bureaus">
-      <div className="bureaus_block">
-        <div className="relative">
-          <img className="search" src={search} alt="" />
-          <input
-            value={value}
-            onChange={(e) => setValue(e.target.value)}
-            type="text"
-            placeholder="Поиск обменных бюро"
-          />
+    <div className="exchange-bureaus-map">
+      <div className="relative one">
+        <img className="search" src={search} alt="" />
+        <input
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
+          type="text"
+          placeholder="Поиск обменных бюро"
+        />
+      </div>
+      <div className="exchange_bureaus">
+        <div className="bureaus_block">
+          <div className="relative twos-er">
+            <img className="search" src={search} alt="" />
+            <input
+              value={value}
+              onChange={(e) => setValue(e.target.value)}
+              type="text"
+              placeholder="Поиск обменных бюро"
+            />
+          </div>
+          {geo
+            .filter((obj) => {
+              return (
+                obj.name && obj.name.toLowerCase().includes(value.toLowerCase())
+              );
+            })
+            .map((el) => (
+              <div className="bureaus_box">
+                <div className="image_logo_bureaus">
+                  <img src={el.logo} alt="" />
+                </div>
+                <div className="flex">
+                  <p
+                    onClick={() =>
+                      localStorage.getItem("token")
+                        ? navigate(`/exchange-detail/${el.slug}`)
+                        : navigate(`/login`)
+                    }
+                    className="title"
+                  >
+                    {el.name}
+                  </p>
+                  <div>
+                    <p className="text">
+                      <img className="icon" src={map} alt="" />
+                      {el.address}
+                    </p>
+                    <p className="text">
+                      <img className="icon" src={number} alt="" />
+                      {el.phone}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
         </div>
-        <div className="map-container-bureaus">
+        <div className="map-container">
           <div
             id="map"
             style={{ width: "100%", height: "100%" }}
-            className="map"
+            className="maps-container"
           ></div>
         </div>
-        {geo
-          .filter((obj) => {
-            return (
-              obj.name && obj.name.toLowerCase().includes(value.toLowerCase())
-            );
-          })
-          .map((el) => (
-            <div className="bureaus_box">
-              <div className="image_logo_bureaus">
-                <img src={el.logo} alt="" />
-              </div>
-              <div className="flex">
-                <p
-                  onClick={() =>
-                    localStorage.getItem("token")
-                      ? navigate(`/exchange-detail/${el.slug}`)
-                      : navigate(`/login`)
-                  }
-                  className="title"
-                >
-                  {el.name}
-                </p>
-                <div>
-                  <p className="text">
-                    <img className="icon" src={map} alt="" />
-                    {el.address}
-                  </p>
-                  <p className="text">
-                    <img className="icon" src={number} alt="" />
-                    {el.phone}
-                  </p>
-                </div>
-              </div>
-            </div>
-          ))}
-      </div>
-      <div className="map-container">
-        <div
-          id="map"
-          style={{ width: "100%", height: "100%" }}
-          className="map"
-        ></div>
       </div>
     </div>
   );

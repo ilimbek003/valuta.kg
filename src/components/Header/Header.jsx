@@ -37,12 +37,13 @@ const Header = () => {
                     Избранное
                   </button>
                 </NavLink>
-                {localStorage.getItem("user_type") === "Buyer" ? (
-                  <NavLink to="/dashboard/home">
+                {localStorage.getItem("user") === "Buyer" && (
+                  <NavLink to="/dashboard/cabinet">
                     <img className="user" src={user} alt="" />
                   </NavLink>
-                ) : (
-                  <NavLink to="/dashboard/cabinet">
+                )}
+                {localStorage.getItem("user") === "Exchanger" && (
+                  <NavLink to="/dashboard/home">
                     <img className="user" src={user} alt="" />
                   </NavLink>
                 )}
@@ -145,7 +146,7 @@ const Header = () => {
                   </div>
                 </NavLink>
               ) : (
-                <NavLink to="/dashboard/home">
+                <NavLink to="/dashboard/cabinet">
                   <div className="flex-mob">
                     <NavLink to="/dashboard/favorites">
                       <button className="favorites">

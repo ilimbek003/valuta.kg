@@ -8,7 +8,7 @@ const NewsDetail = () => {
   const [news, setNews] = useState([]);
   useEffect(() => {
     api
-      .get(`/api/news/${slug}`)
+      .get(`/news/${slug}`)
       .then((response) => {
         setNews(response.data);
       })
@@ -16,7 +16,6 @@ const NewsDetail = () => {
         console.log(error);
       });
   }, []);
-  console.log(news);
   return (
     <div className="news_detail">
       <div className="container">

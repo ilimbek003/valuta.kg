@@ -116,7 +116,9 @@ const Cabinet = ({ profiles, handleEditProfile }) => {
             <button
               className="button_form on"
               onClick={() =>
-                localStorage.removeItem("token") || navigate("/login")
+                localStorage.removeItem("token") ||
+                localStorage.removeItem("user") ||
+                navigate("/login")
               }
             >
               Выйти
