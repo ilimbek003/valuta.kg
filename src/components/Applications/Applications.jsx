@@ -29,15 +29,13 @@ const Applications = ({ calculate }) => {
   const [id, setId] = useState("");
 
   const handleSubmit = () => {
-    if (local) {
-      api
-        .get(
-          `/request-filter/available/?title=${buySell}&summa=${course}&crypto=${id}&course=${payment}&currency=${currency}`
-        )
-        .then((response) => {
-          setRequest(response.data);
-        });
-    }
+    api
+      .get(
+        `/request-filter/available/?title=${buySell}&summa=${course}&crypto=${id}&course=${payment}&currency=${currency}`
+      )
+      .then((response) => {
+        setRequest(response.data);
+      });
   };
 
   useEffect(() => {
