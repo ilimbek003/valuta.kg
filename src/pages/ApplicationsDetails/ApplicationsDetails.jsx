@@ -24,7 +24,7 @@ const ApplicationsDetails = () => {
   });
   const [user, setUser] = useState([]);
   useEffect(() => {
-    api.get(`/api/request/${user_id}`).then((response) => {
+    api.get(`/request/${user_id}`).then((response) => {
       setUser(response.data);
     });
   }, []);
@@ -36,7 +36,7 @@ const ApplicationsDetails = () => {
       category: text.state,
     };
     api
-      .post(`/api/complain/`, data, {
+      .post(`/complain/`, data, {
         headers: { Authorization: localStorage.getItem("token") },
       })
       .then((response) => {
@@ -69,7 +69,14 @@ const ApplicationsDetails = () => {
               <div>
                 <p className="title">{user.user}</p>
                 <div className="flex flex-one">
-                  <p className="text">
+                  <p
+                    className="text"
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "5px",
+                    }}
+                  >
                     <img src={phone} alt="" />
                     {!phoneUser ? "***********" : user.phone}
                   </p>

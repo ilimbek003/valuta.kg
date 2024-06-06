@@ -80,7 +80,7 @@ const Profile = ({ profiles, handleEditProfile }) => {
 
   return (
     <div className="profile">
-      {profiles?.user?.is_active === false ? (
+      {profiles?.user?.is_active === true ? (
         ""
       ) : (
         <div>

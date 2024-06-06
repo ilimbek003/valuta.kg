@@ -3,8 +3,11 @@ import fire from "../../img/fire.svg";
 import fu from "../../img/fu.svg";
 import { api } from "../../Api";
 import { Alert } from "../../components/UI/alert/alert";
+import { useNavigate } from "react-router-dom";
 const Prediction = ({ slug, open, handleCharts }) => {
+  const navigate = useNavigate();
   const [like, setLike] = useState([]);
+  const [token, setToken] = useState(localStorage.getItem("token"));
   const copyTextToClipboard = (id) => {
     api
       .post(
@@ -39,13 +42,15 @@ const Prediction = ({ slug, open, handleCharts }) => {
   };
 
   const handleLike = () => {
-    api
-      .get(`/like-percentage/${slug}`, {
-        headers: { Authorization: `Token ${localStorage.getItem("token")}` },
-      })
-      .then((response) => {
-        setLike(response.data);
-      });
+    if (token) {
+      api
+        .get(`/like-percentage/${slug}`, {
+          headers: { Authorization: `Token ${token}` },
+        })
+        .then((response) => {
+          setLike(response.data);
+        });
+    }
   };
   const handelDelete = (id) => {
     api
@@ -71,28 +76,48 @@ const Prediction = ({ slug, open, handleCharts }) => {
           Сегодня сообщество оптимистичного настроено в отношении Биткоин (BTC).
         </p>
         <div className="grid">
-          <div
-            className={like.like ? "image_emoji active" : "image_emoji"}
-            onClick={() =>
-              copyTextToClipboard(open?.crypto?.id) ||
-              handleLike() ||
-              handelDelete(open?.crypto?.id)
-            }
-          >
-            <img src={fire} alt="" />
-            {like.like}
-          </div>
-          <div
-            className={like.dislike ? "image_emoji active" : "image_emoji"}
-            onClick={() =>
-              copyTextToClipboard2(open?.crypto?.id) ||
-              handleLike() ||
-              handelDelete(open?.crypto?.id)
-            }
-          >
-            <img src={fu} alt="" />
-            {like.dislike}
-          </div>
+          {token ? (
+            <div
+              className={like.like ? "image_emoji active" : "image_emoji"}
+              onClick={() =>
+                copyTextToClipboard(open?.crypto?.id) ||
+                handleLike() ||
+                handelDelete(open?.crypto?.id)
+              }
+            >
+              <img src={fire} alt="" />
+              {like.like}
+            </div>
+          ) : (
+            <div
+              className={like.like ? "image_emoji active" : "image_emoji"}
+              onClick={() => navigate("/login")}
+            >
+              <img src={fire} alt="" />
+              {like.like}
+            </div>
+          )}
+          {token ? (
+            <div
+              className={like.dislike ? "image_emoji active" : "image_emoji"}
+              onClick={() =>
+                copyTextToClipboard2(open?.crypto?.id) ||
+                handleLike() ||
+                handelDelete(open?.crypto?.id)
+              }
+            >
+              <img src={fu} alt="" />
+              {like.dislike}
+            </div>
+          ) : (
+            <div
+              className={like.dislike ? "image_emoji active" : "image_emoji"}
+              onClick={() => navigate("/login")}
+            >
+              <img src={fu} alt="" />
+              {like.dislike}
+            </div>
+          )}
         </div>
       </div>
     </div>

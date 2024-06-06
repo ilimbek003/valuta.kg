@@ -32,12 +32,7 @@ const Applications = ({ calculate }) => {
     if (local) {
       api
         .get(
-          `/request/filter/?title=${buySell}&summa=${course}&crypto=${id}&course=${payment}&currency=${currency}`,
-          {
-            headers: {
-              Authorization: `Token ${local}`,
-            },
-          }
+          `/request-filter/available/?title=${buySell}&summa=${course}&crypto=${id}&course=${payment}&currency=${currency}`
         )
         .then((response) => {
           setRequest(response.data);
@@ -107,52 +102,53 @@ const Applications = ({ calculate }) => {
             </div>
             <div className="applications_block_body">
               <h3 className="title">Предложения</h3>
-              {auth ? (
-                <div>
-                  <div className="offers">
-                    <div className="offer">
-                      <p className="offer_text">Участник</p>
-                      <p className="offer_text">Количество</p>
-                      <p className="offer_text">Валюта</p>
-                      <p className="offer_text">По курсу</p>
-                      <p className="offer_text">Время</p>
-                      <p style={{ textAlign: "end" }} className="offer_text">
-                        Торгуй
-                      </p>
-                    </div>
-                    <div className="offer_blocks">
-                      {request?.results?.map((el, id) => (
-                        <div
-                          key={id}
-                          onClick={() =>
-                            el.user_id
-                              ? navigate(`/applications/${el.user_id}`)
-                              : ""
-                          }
-                          className="offer_block"
-                        >
-                          <div className="flex">
-                            <img className="user" src={user} alt="" />
-                            <p className="offer_block_title">{el.user}</p>
-                          </div>
-                          <p className="offer_block_text total">{el.total}</p>
-                          <p className="offer_block_text">{el.crypto}</p>
-                          <p className="offer_block_text">${el.course}</p>
-                          <p className="offer_block_time">{el.date}</p>
-                          <button
-                            className={
-                              el.user_id
-                                ? "button_form offer_block_btn"
-                                : "button_form offer_block_btnsesion"
-                            }
-                          >
-                            {el.title}
-                          </button>
+              <div>
+                <div className="offers">
+                  <div className="offer">
+                    <p className="offer_text">Участник</p>
+                    <p className="offer_text">Количество</p>
+                    <p className="offer_text">Валюта</p>
+                    <p className="offer_text">По курсу</p>
+                    <p className="offer_text">Время</p>
+                    <p style={{ textAlign: "end" }} className="offer_text">
+                      Торгуй
+                    </p>
+                  </div>
+                  <div className="offer_blocks">
+                    {request?.results?.map((el, id) => (
+                      <div
+                        key={id}
+                        onClick={() =>
+                          el.user_id
+                            ? navigate(`/applications/${el.user_id}`)
+                            : ""
+                        }
+                        className="offer_block"
+                      >
+                        <div className="flex">
+                          <img className="user" src={user} alt="" />
+                          <p className="offer_block_title">{el.user}</p>
                         </div>
-                      ))}
-                    </div>
+                        <p className="offer_block_text total">{el.total}</p>
+                        <p className="offer_block_text">{el.crypto}</p>
+                        <p className="offer_block_text">${el.course}</p>
+                        <p className="offer_block_time">{el.date}</p>
+                        <button
+                          className={
+                            el.user_id
+                              ? "button_form offer_block_btn"
+                              : "button_form offer_block_btnsesion"
+                          }
+                        >
+                          {el.title}
+                        </button>
+                      </div>
+                    ))}
                   </div>
                 </div>
+              </div>
+              {/* {auth ? (
+                ""
               ) : (
                 <div className="div_auth">
                   <p className="text">
@@ -168,7 +164,7 @@ const Applications = ({ calculate }) => {
                     </NavLink>
                   </div>
                 </div>
-              )}
+              )} */}
             </div>
           </div>
           <SliderApplications
