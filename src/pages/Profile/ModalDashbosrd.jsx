@@ -3,6 +3,7 @@ import Modal from "../../components/UI/Modal/Modal";
 import { api } from "../../Api";
 import timoutImage from "../../img/timout.svg";
 import Loading from "../../components/UI/Loading/Loading";
+import { Alert } from "../../components/UI/alert/alert";
 
 const ModalDashbosrd = ({
   count,
@@ -21,6 +22,7 @@ const ModalDashbosrd = ({
   const [verificationValue2, setVerificationValue2] = useState({
     logo: null,
   });
+  const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     if (dataCompanies.logo) {
@@ -55,8 +57,11 @@ const ModalDashbosrd = ({
       if (response.data.response === true) {
         setLoading(false);
         handleEditProfile();
+      } else {
+        setLoading(false);
+        setError(response.data.message);
+        setCount({ ...count, first: false, second: false, third: false });
       }
-      console.log("Ответ сервера:", response);
     } catch (error) {
       setLoading(false);
       console.error("Ошибка при отправке данных на сервер:", error);
@@ -307,6 +312,9 @@ const ModalDashbosrd = ({
                     placeholder="Название компании"
                     required
                   />
+                  {error && (
+                    <p style={{ color: "red", fontSize: 14 }}>{error}</p>
+                  )}
                 </div>
                 <div className="image_box">
                   <label className="label_form">Логотип компании</label>

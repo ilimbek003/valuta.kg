@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./ApplicationsDetails.css";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import phone from "../../img/phone.svg";
 import users from "../../img/user.svg";
 import Modal from "../../components/UI/Modal/Modal";
@@ -9,6 +9,7 @@ import Loading from "../../components/UI/Loading/Loading";
 import { Alert } from "../../components/UI/alert/alert";
 
 const ApplicationsDetails = () => {
+  const navigate = useNavigate();
   const { user_id } = useParams();
   const [modal, setModal] = useState(false);
   const [text, setText] = useState("");
@@ -53,7 +54,8 @@ const ApplicationsDetails = () => {
   };
 
   const handleChange = () => {
-    if (localStorage.getItem("token")) {
+    if (!localStorage.getItem("token")) {
+      navigate("/login");
       setPhoneUser(!phoneUser);
     }
   };

@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "./Applications.css";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import InputComponent from "../UI/InputComponent/InputComponent";
 import user from "../../img/user.svg";
 import { api } from "../../Api";
 import SuggestionsInput from "./SuggestionsInput";
 import SliderApplications from "./SliderApplications";
+import { Alert } from "../UI/alert/alert";
 
 const buy_sell_data = [
   {
@@ -25,7 +26,6 @@ const Applications = ({ calculate }) => {
   const [payment, setPayment] = useState("");
   const navigate = useNavigate();
   const [request, setRequest] = useState([]);
-  const [local, setLocal] = useState(localStorage.getItem("token"));
   const [id, setId] = useState("");
 
   const handleSubmit = () => {
@@ -35,6 +35,15 @@ const Applications = ({ calculate }) => {
       )
       .then((response) => {
         setRequest(response.data);
+        if (response.data.response === false) {
+          Alert("error", response.data.message);
+          setTimeout(() => {
+            setCourse("");
+            setId("");
+            setPayment("");
+            setCurrency("");
+          }, 4000);
+        }
       });
   };
 
@@ -145,24 +154,6 @@ const Applications = ({ calculate }) => {
                   </div>
                 </div>
               </div>
-              {/* {auth ? (
-                ""
-              ) : (
-                <div className="div_auth">
-                  <p className="text">
-                    Тут появятся предложения об обмене криптовалюты.
-                    Зарегистрируйтесь, чтобы добавить предложения
-                  </p>
-                  <div className="flex">
-                    <NavLink to="/login">
-                      <button className="button_form login">Войти</button>
-                    </NavLink>
-                    <NavLink to="/register">
-                      <button className="button_form">Регистрация</button>
-                    </NavLink>
-                  </div>
-                </div>
-              )} */}
             </div>
           </div>
           <SliderApplications

@@ -31,7 +31,6 @@ import Cryptocurrencies from "./pages/Cryptocurrencies/Cryptocurrencies";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import { api } from "./Api";
 import PersonalCabinet from "./pages/PersonalCabinet/PersonalCabinet";
-import PrivateRoute from "./PrivateRoute";
 
 function App() {
   const location = useLocation();
