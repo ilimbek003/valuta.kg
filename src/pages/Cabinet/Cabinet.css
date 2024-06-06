@@ -22,7 +22,6 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  margin: 0 20px 0 0;
 }
 
 .cabinet .text {
@@ -176,7 +175,7 @@
     font-weight: 700;
   }
   .cabinet .form_password {
-    margin-top: 30px ;
+    margin-top: 30px;
     width: 100%;
   }
 }

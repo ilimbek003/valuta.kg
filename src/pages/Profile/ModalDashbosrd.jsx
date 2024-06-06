@@ -18,6 +18,9 @@ const ModalDashbosrd = ({
   const [verificationValue, setVerificationValue] = useState({
     logo: null,
   });
+  const [verificationValue2, setVerificationValue2] = useState({
+    logo: null,
+  });
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     if (dataCompanies.logo) {
@@ -36,6 +39,7 @@ const ModalDashbosrd = ({
     try {
       const formData = new FormData();
       formData.append("logo", verificationValue.logo);
+      formData.append("logo", verificationValue2.logo);
       formData.append("name", dataCompanies.name);
       formData.append("description", verificationValue.desc);
       formData.append("address", dataCompanies.address);
@@ -190,7 +194,9 @@ const ModalDashbosrd = ({
                 <div>
                   <div style={{ margin: 0 }} className="grid">
                     <div className="image_box">
-                      <label className="label_form">Логотип компании</label>
+                      <label className="label_form">
+                        Лицевая сторона паспорта
+                      </label>
                       <div style={{ height: 235 }} className="image_block">
                         <label style={{ width: "100%", height: "100%" }}>
                           {verificationValue.logo ? (
@@ -227,14 +233,16 @@ const ModalDashbosrd = ({
                       </div>
                     </div>
                     <div className="image_box">
-                      <label className="label_form">Логотип компании</label>
+                      <label className="label_form">
+                        Оборотная сторона паспорта
+                      </label>
                       <div style={{ height: 235 }} className="image_block">
                         <label style={{ width: "100%", height: "100%" }}>
-                          {verificationValue.logo ? (
+                          {verificationValue2.logo ? (
                             <img
                               src={
-                                verificationValue.logo &&
-                                URL.createObjectURL(verificationValue.logo)
+                                verificationValue2.logo &&
+                                URL.createObjectURL(verificationValue2.logo)
                               }
                               alt=""
                             />
@@ -252,8 +260,8 @@ const ModalDashbosrd = ({
                             type="file"
                             accept="image/*"
                             onChange={(event) =>
-                              setVerificationValue({
-                                ...verificationValue,
+                              setVerificationValue2({
+                                ...verificationValue2,
                                 logo:
                                   event.target.files && event.target.files[0],
                               })

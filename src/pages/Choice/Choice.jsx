@@ -17,14 +17,14 @@ const Choice = () => {
             <NavLink
               to="/register/buyer"
               className="btn"
-              onClick={() => localStorage.setItem("user_type", "Buyer")}
+              onClick={() => localStorage.setItem("user", "Buyer")}
             >
               Покупатель
             </NavLink>
             <NavLink
               to="/register/exchanger"
               className="btn"
-              onClick={() => localStorage.setItem("user_type", "Exchanger")}
+              onClick={() => localStorage.setItem("user", "Exchanger")}
             >
               Обменник
             </NavLink>

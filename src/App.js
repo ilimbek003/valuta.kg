@@ -1,6 +1,12 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import { Navigate, Route, Routes, useLocation } from "react-router-dom";
+import {
+  Navigate,
+  Route,
+  Routes,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
 
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
@@ -17,7 +23,7 @@ import News from "./pages/News/News";
 import NewsDetail from "./pages/NewsDetail/NewsDetail";
 import History from "./pages/History/History";
 
-import  ExchangeBureaus from "./pages/ExchangeBureaus/ExchangeBureaus";
+import ExchangeBureaus from "./pages/ExchangeBureaus/ExchangeBureaus";
 import ExchangeDetail from "./pages/ExchangeDetail/ExchangeDetail";
 import PageCoin from "./pages/PageCoin/PageCoin";
 import Cryptocurrencies from "./pages/Cryptocurrencies/Cryptocurrencies";
@@ -25,9 +31,11 @@ import Cryptocurrencies from "./pages/Cryptocurrencies/Cryptocurrencies";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import { api } from "./Api";
 import PersonalCabinet from "./pages/PersonalCabinet/PersonalCabinet";
+import PrivateRoute from "./PrivateRoute";
 
 function App() {
   const location = useLocation();
+  const navigate = useNavigate();
   useEffect(() => {
     handleScroll();
   }, [location]);
@@ -74,11 +82,16 @@ function App() {
     api.get("/news").then((response) => {
       setData(response.data);
     });
-  }, []); 
+  }, []);
   useEffect(() => {
     api.get("/public").then((response) => {
       setPublis(response.data);
     });
+  }, []);
+  useEffect(() => {
+    if (!localStorage.getItem("token")) {
+      navigate("/");
+    }
   }, []);
 
   return (
@@ -130,7 +143,9 @@ function App() {
         />
         <Route
           path="dashboard/*"
-          element={<PersonalCabinet calculate={calculate} />}
+          element={
+            <PrivateRoute element={<PersonalCabinet calculate={calculate} />} />
+          }
         />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>

@@ -4,6 +4,7 @@
   color: var(--gray);
   font-size: 14px;
   font-weight: 500;
+  white-space: nowrap;
 }
 
 .input_form {
@@ -22,7 +23,7 @@
 }
 
 .input_form.disablet {
-  background: #D8D8D8;
+  background: #d8d8d8;
   color: var(--gray);
 }
 
@@ -132,7 +133,7 @@
 .form .p_content {
   text-align: center;
 }
-.red{
+.red {
   color: red;
   font-size: 12px;
   font-weight: 400;
