@@ -163,8 +163,8 @@
   gap: 8px;
 }
 .page_coin .flex img {
-  width: 30px;
   height: 30px;
+  border-radius: 50%;
 }
 
 .page_coin .price_block {

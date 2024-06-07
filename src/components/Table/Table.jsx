@@ -10,7 +10,7 @@ import map from "../../img/maping.svg";
 import arrow from "../../img/icon_arrow.svg";
 import { api } from "../../Api";
 import { Alert } from "../UI/alert/alert";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import Tables from "./Tables";
 
 const Table = ({ title }) => {
@@ -126,14 +126,9 @@ const Table = ({ title }) => {
                       <img className="logos" src={el.logo} alt="" />
                       <div className="gray_texts_flex">
                         <div className="gray_texts">
-                          <p
-                            className="title"
-                            onClick={() =>
-                              localStorage.getItem("token") ? navigate(`/exchange-detail/${el.slug}`) : navigate("/login")
-                            }
-                          >
-                            {el.exchanger}
-                          </p>
+                          <NavLink to={`/exchange-detail/${el.slug}`}>
+                            <p className="title">{el.exchanger}</p>
+                          </NavLink>
                           <div className="gray_texts_flex_one">
                             <img className="icon" src={phone} alt="" />
                             <p className="gray">{el.phone}</p>
@@ -170,9 +165,7 @@ const Table = ({ title }) => {
                         <p className="chet">${el.Ethereum?.buy}</p>
                       </div>
                       <div>
-                        <p className="chet" style={{ margin: "0 0 0 20px" }}>
-                          ${el.Ethereum?.sell}
-                        </p>
+                        <p className="chet">${el.Ethereum?.sell}</p>
                       </div>
                     </div>
                   ) : (
@@ -184,10 +177,10 @@ const Table = ({ title }) => {
                   {el.Solana ? (
                     <div className="grid_flex">
                       <div>
-                        <p className="chet">${el.Bitcoin?.buy}</p>
+                        <p className="chet">${el.Solana?.buy}</p>
                       </div>
                       <div>
-                        <p className="chet">${el.Bitcoin?.sell}</p>
+                        <p className="chet">${el.Solana?.sell}</p>
                       </div>
                     </div>
                   ) : (

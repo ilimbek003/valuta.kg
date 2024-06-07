@@ -8,6 +8,5 @@ export const store = configureStore({
         user_info,
         status,
         process,
-
     }
 })

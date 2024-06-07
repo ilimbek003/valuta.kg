@@ -25,6 +25,7 @@
   border: 2px solid transparent;
   transition: 0.3s ease;
   cursor: pointer;
+  text-decoration: none;
 }
 .cryptocurrencies .cryptocurrencies_box img {
   width: 45px;

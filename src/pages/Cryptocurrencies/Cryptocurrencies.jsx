@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Cryptocurrencies.css";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { api } from "../../Api";
 
 const Cryptocurrencies = () => {
@@ -17,14 +17,14 @@ const Cryptocurrencies = () => {
         </div>
         <div className="cryptocurrencies_block">
           {data.map((el, index) => (
-            <div
+            <NavLink
               key={index}
-              onClick={() => navigate(`/page-coin/${el.slug}`)}
+              to={`/page-coin/${el.slug}`}
               className="cryptocurrencies_box"
             >
               <img src={el.img} alt="" />
               <p className="text">{el.name}</p>
-            </div>
+            </NavLink>
           ))}
         </div>
       </div>

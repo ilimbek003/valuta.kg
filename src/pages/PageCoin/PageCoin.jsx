@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom";
 
 import { api } from "../../Api";
 import Prediction from "./Prediction";
-import { Alert } from "../../components/UI/alert/alert";
 import Charts from "./Charts";
 import News from "./News";
 import Questions from "./Questions";
@@ -18,7 +17,6 @@ const PageCoin = ({ data }) => {
   const [isChartsLoaded, setChartsLoaded] = useState(false);
   const [open, setOpen] = useState([]);
   const [open2, setOpen2] = useState("24_hours");
-  console.log(open2);
 
   useEffect(() => {
     const fetchData = async () => {

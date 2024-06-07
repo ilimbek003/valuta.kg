@@ -126,6 +126,9 @@
   background: var(--gray_ww);
   border-radius: 14px;
 }
+.applications .offer_blocks a {
+  text-decoration: none;
+}
 
 .applications .offer_block {
   padding: 18px 10px;

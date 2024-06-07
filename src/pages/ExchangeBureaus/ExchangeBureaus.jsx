@@ -3,9 +3,10 @@ import "./ExchangeBureaus.css";
 import map from "../../img/map.svg";
 import number from "../../img/map.svg";
 import search from "../../img/Search.svg";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { api } from "../../Api";
 import DG from "2gis-maps";
+import { FaPhoneAlt } from "react-icons/fa";
 
 const ExchangeBureaus = () => {
   const [value, setValue] = useState("");
@@ -68,26 +69,16 @@ const ExchangeBureaus = () => {
                   <img src={el.logo} alt="" />
                 </div>
                 <div className="flex">
-                  <p
-                    onClick={() =>
-                      localStorage.getItem("token")
-                        ? navigate(`/exchange-detail/${el.slug}`)
-                        : navigate(`/login`)
-                    }
-                    className="title"
-                  >
-                    {el.name}
+                  <NavLink to={`/exchange-detail/${el.slug}`}>
+                    <p className="title">{el.name}</p>
+                  </NavLink>
+                  <p className="text">
+                    <img className="icon" src={map} alt="" />
+                    {el.address}
                   </p>
-                  <div>
-                    <p className="text">
-                      <img className="icon" src={map} alt="" />
-                      {el.address}
-                    </p>
-                    <p className="text">
-                      <img className="icon" src={number} alt="" />
-                      {el.phone}
-                    </p>
-                  </div>
+                  <p className="text" style={{ margin: "0 0 0 5px", gap: "5px" }}>
+                    <FaPhoneAlt size={16} color="#1856cd" /> {el.phone}
+                  </p>
                 </div>
               </div>
             ))}

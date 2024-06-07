@@ -63,8 +63,8 @@
   justify-content: space-between;
 }
 .table .blocks .grid_flex {
-  display: flex;
-  gap: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   width: 20%;
 }
 .table .save {
@@ -108,7 +108,6 @@
 .table .gray_texts_flex {
   display: flex;
   align-items: end;
-  justify-content: space-between;
   gap: 15px;
 }
 
@@ -167,6 +166,7 @@
 .table .min-media {
   display: none;
 }
+
 @media screen and (max-width: 900px) {
   .table .max-media {
     display: none;

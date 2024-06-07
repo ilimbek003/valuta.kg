@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Applications.css";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import InputComponent from "../UI/InputComponent/InputComponent";
 import user from "../../img/user.svg";
 import { api } from "../../Api";
@@ -123,33 +123,29 @@ const Applications = ({ calculate }) => {
                   </div>
                   <div className="offer_blocks">
                     {request?.results?.map((el, id) => (
-                      <div
-                        key={id}
-                        onClick={() =>
-                          el.user_id
-                            ? navigate(`/applications/${el.user_id}`)
-                            : ""
-                        }
-                        className="offer_block"
+                      <NavLink
+                        to={el.user_id ? `/applications/${el.user_id}` : ""}
                       >
-                        <div className="flex">
-                          <img className="user" src={user} alt="" />
-                          <p className="offer_block_title">{el.user}</p>
+                        <div key={id} className="offer_block">
+                          <div className="flex">
+                            <img className="user" src={user} alt="" />
+                            <p className="offer_block_title">{el.user}</p>
+                          </div>
+                          <p className="offer_block_text total">{el.total}</p>
+                          <p className="offer_block_text">{el.crypto}</p>
+                          <p className="offer_block_text">${el.course}</p>
+                          <p className="offer_block_time">{el.date}</p>
+                          <button
+                            className={
+                              el.user_id
+                                ? "button_form offer_block_btn"
+                                : "button_form offer_block_btnsesion"
+                            }
+                          >
+                            {el.title}
+                          </button>
                         </div>
-                        <p className="offer_block_text total">{el.total}</p>
-                        <p className="offer_block_text">{el.crypto}</p>
-                        <p className="offer_block_text">${el.course}</p>
-                        <p className="offer_block_time">{el.date}</p>
-                        <button
-                          className={
-                            el.user_id
-                              ? "button_form offer_block_btn"
-                              : "button_form offer_block_btnsesion"
-                          }
-                        >
-                          {el.title}
-                        </button>
-                      </div>
+                      </NavLink>
                     ))}
                   </div>
                 </div>
