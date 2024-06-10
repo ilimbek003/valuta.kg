@@ -26,8 +26,8 @@ const Register = () => {
     e.preventDefault();
     setLoading(true);
     if (inputData.password === inputData.confirm_password) {
-      const dataNew = {
-        user: localStorage.getItem("user"),
+      const dataNew = { 
+        user_type: localStorage.getItem("user"),
         email: inputData.email,
         first_name: inputData.first_name,
         password: inputData.password,

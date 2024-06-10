@@ -42,7 +42,8 @@ const Prediction = ({ slug, open, handleCharts }) => {
       });
   };
 
-  const handleLike = () => {  
+  const handleLike = () => {
+    if (token) {
       api
         .get(`/like-percentage/${slug}`, {
           headers: { Authorization: `Token ${token}` },
@@ -50,6 +51,7 @@ const Prediction = ({ slug, open, handleCharts }) => {
         .then((response) => {
           setLike(response.data);
         });
+    }
   };
   const handelDelete = (id) => {
     api
@@ -93,7 +95,7 @@ const Prediction = ({ slug, open, handleCharts }) => {
               onClick={() => navigate("/login")}
             >
               <img src={fire} alt="" />
-              {like.like}
+              {like.like_percentage}
             </div>
           )}
           {token ? (
@@ -114,7 +116,7 @@ const Prediction = ({ slug, open, handleCharts }) => {
               onClick={() => navigate("/login")}
             >
               <img src={fu} alt="" />
-              {like.dislike}
+              {like.dislike_percentage}
             </div>
           )}
         </div>
