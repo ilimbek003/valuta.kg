@@ -39,7 +39,7 @@ const Profile = ({ profiles, handleEditProfile }) => {
     second: false,
     third: false,
   });
-  const [being, setBeing] = useState(false);
+  const [being, setBeing] = useState(true);
   const [empty, setEmpty] = useState(false);
   const [timoutImage, setTimoutImage] = useState(false);
 
@@ -88,6 +88,7 @@ const Profile = ({ profiles, handleEditProfile }) => {
   useEffect(() => {
     document.title = "Личный кабинет";
   }, []);
+  console.log(being);
   return (
     <div className="profile">
       {isActiveUser ? (
@@ -113,14 +114,15 @@ const Profile = ({ profiles, handleEditProfile }) => {
                 ""
               )}
               {profiles?.is_processing === true ? (
-                <Modal>
-                  <div className="being">
+                <Modal close={true} setModal={setBeing}>
+                  <div className="being" onClick={(e) => e.stopPropagation()}>
                     <h1 className="">Ожидание проверки</h1>
                     <img src={black} alt="black" />
                     <p>
                       Ваш аккаунт находится на стадии проверки. <br /> Ожидайте
                       потверждение
                     </p>
+                    <button onClick={() => setBeing(false)}>Понятно</button>
                   </div>
                 </Modal>
               ) : (
