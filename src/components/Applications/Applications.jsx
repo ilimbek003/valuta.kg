@@ -24,7 +24,6 @@ const Applications = ({ calculate }) => {
   const [btc, setBtc] = useState("BTC Биткоин");
   const [currency, setCurrency] = useState("");
   const [payment, setPayment] = useState("");
-  const navigate = useNavigate();
   const [request, setRequest] = useState([]);
   const [id, setId] = useState("");
 

@@ -81,15 +81,15 @@ const Profile = ({ profiles, handleEditProfile }) => {
     if (profiles?.user?.is_active !== undefined) {
       localStorage.setItem("user-is-active", profiles.user.is_active);
     }
-  }, [profiles]);
+  });
 
-  const isActiveUser = localStorage.getItem("user-is-active") === "true";
+  const isActiveUser = localStorage.getItem("user-is-active") === "false";
   return (
     <div className="profile">
       {isActiveUser ? (
         ""
       ) : (
-        <div>
+        <div> 
           {verification && (
             <ModalDashbosrd
               count={count}

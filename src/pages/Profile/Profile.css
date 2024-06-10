@@ -410,6 +410,11 @@
     justify-content: space-between;
     margin: 0 0 30px 0;
   }
+  .profile .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
 }
 @media screen and (max-width: 450px) {
   .profile .between {

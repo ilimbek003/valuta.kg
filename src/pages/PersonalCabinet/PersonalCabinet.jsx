@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Navigate, Route, Routes, useLocation } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import Profile from "../Profile/Profile";
 import Favorites from "../Favorites/Favorites";
 import AddCoin from "../AddCoin/AddCoin";

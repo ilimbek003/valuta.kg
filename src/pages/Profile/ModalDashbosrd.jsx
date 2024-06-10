@@ -60,6 +60,7 @@ const ModalDashbosrd = ({
       } else {
         setLoading(false);
         setError(response.data.message);
+        setError(response.data.logo);
         setCount({ ...count, first: false, second: false, third: false });
       }
     } catch (error) {
@@ -277,6 +278,11 @@ const ModalDashbosrd = ({
                       </div>
                     </div>
                   </div>
+                  {error && (
+                    <p style={{ color: "red", fontSize: 14, lineHeight: 1 }}>
+                      {error}
+                    </p>
+                  )}
                 </div>
               </div>
               <button
@@ -313,7 +319,9 @@ const ModalDashbosrd = ({
                     required
                   />
                   {error && (
-                    <p style={{ color: "red", fontSize: 14 }}>{error}</p>
+                    <p style={{ color: "red", fontSize: 14, lineHeight: 1 }}>
+                      {error}
+                    </p>
                   )}
                 </div>
                 <div className="image_box">
