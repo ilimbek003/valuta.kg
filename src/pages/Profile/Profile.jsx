@@ -77,10 +77,16 @@ const Profile = ({ profiles, handleEditProfile }) => {
         }
       });
   };
+  useEffect(() => {
+    if (profiles?.user?.is_active !== undefined) {
+      localStorage.setItem("user-is-active", profiles.user.is_active);
+    }
+  }, [profiles]);
 
+  const isActiveUser = localStorage.getItem("user-is-active") === "true";
   return (
     <div className="profile">
-      {profiles?.user?.is_active === true ? (
+      {isActiveUser ? (
         ""
       ) : (
         <div>
@@ -211,7 +217,9 @@ const Profile = ({ profiles, handleEditProfile }) => {
               {profiles?.currency?.map((el, id) => (
                 <div className="offer_block">
                   <div className="flex">
-                    <img className="btc" src={el.img} alt="" />
+                    <div className="images-img">
+                      <img className="btc" src={el.img} alt="" />
+                    </div>
                     <p className="offer_block_title">{el.crypto}</p>
                   </div>
                   <p className="offer_block_text">{el.buy}</p>
@@ -248,7 +256,9 @@ const Profile = ({ profiles, handleEditProfile }) => {
                   <div className="flex-edit-offer">
                     <p className="offer_text">Валюты</p>
                     <div className="flex">
-                      <img className="btc" src={el.img} alt="" />
+                      <div className="images-img">
+                        <img className="btc" src={el.img} alt="" />
+                      </div>
                       <p className="offer_block_title">{el.crypto}</p>
                     </div>
                   </div>

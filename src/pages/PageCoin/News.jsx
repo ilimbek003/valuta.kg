@@ -15,11 +15,11 @@ const News = ({ data }) => {
               </div>
               <div className="flex">
                 <p className="title">{el.title}</p>
-                <p
-                  className="text"
-                  dangerouslySetInnerHTML={{ __html: el.description }}
-                ></p>
                 <div>
+                  <p
+                    className="text"
+                    dangerouslySetInnerHTML={{ __html: el.description }}
+                  ></p>
                   <div className="date_and_link">
                     <p className="date">{el.data}</p>
                     <a href="/" target="blank" className="link">

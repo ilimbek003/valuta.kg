@@ -63,14 +63,26 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
+.exchange_bureaus .flex-icon-dec {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.exchange_bureaus .flex-icon-dec img {
+  width: 24px;
+}
 .exchange_bureaus .bureaus_box .text {
-  margin-top: 10px;
   font-size: 14px;
   font-weight: 400;
   color: var(--black_w);
   display: flex;
   align-items: center;
+  white-space: wrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
 }
 
 .exchange_bureaus .text .icon {
@@ -131,12 +143,10 @@
   }
   .exchange_bureaus .bureaus_box .title {
     width: 100%;
-    font-size: 18px;
+    font-size: 17px;
     white-space: wrap;
   }
-  .exchange_bureaus .bureaus_box .flex {
-    gap: 0;
-  }
+
   .exchange-bureaus-map .one {
     display: block;
   }

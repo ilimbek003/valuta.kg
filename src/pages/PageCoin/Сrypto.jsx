@@ -55,7 +55,9 @@ const Crypto = ({ open }) => {
     <div className="coin_box coin-box">
       <div className="between">
         <div className="flex">
-          <img src={open.crypto?.img} alt="" />
+          <div className="image-img">
+            <img src={open.crypto?.img} alt="" />
+          </div>
           <p className="title">{open.crypto?.name}</p>
         </div>
         <div className="flex">

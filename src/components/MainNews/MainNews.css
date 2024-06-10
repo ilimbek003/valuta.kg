@@ -49,7 +49,6 @@
 }
 
 .main_news .main_news_box .text {
-  height: 56px;
   font-size: 14px;
   font-weight: 400;
   line-height: 18px;
@@ -60,7 +59,7 @@
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
-  max-height: 60px;
+  margin: 0 0 15px 0;
 }
 
 .main_news .date_and_link {
@@ -107,6 +106,8 @@
   .main_news .main_news_box {
     display: grid;
     grid-template-columns: 130px 1fr;
+    height: 124px;
+    cursor: pointer;
   }
   .main_news .main_news_box .title {
     height: 20px;
@@ -114,5 +115,12 @@
   }
   .main_news .main_news_box .text {
     font-size: 12px;
+  }
+  .main_news .main_news_block a {
+    text-decoration: none;
+    margin: 0 0 25px 0;
+  }
+  .main_news .button_form.news-ones {
+    margin-top: 15px;
   }
 }

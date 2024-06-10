@@ -26,9 +26,15 @@
   align-items: center;
   justify-content: space-between;
 }
-.profile .btc {
+.profile .images-img {
   width: 40px;
   height: 40px;
+}
+.profile .btc {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
 }
 .profile .images {
   width: 100%;
@@ -144,7 +150,7 @@
 .profile .offer_blocks {
   margin-top: 10px;
   width: 100%;
-  padding: 12px;
+  padding: 12px 12px 1px 12px;
   background: var(--gray_ww);
   border-radius: 14px;
 }
@@ -155,6 +161,7 @@
   padding: 18px 10px;
   border-radius: 10px;
   background: #fff;
+  margin: 0 0 12px;
 }
 
 .profile .offer_block_text {

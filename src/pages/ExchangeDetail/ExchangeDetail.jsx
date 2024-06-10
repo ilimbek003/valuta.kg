@@ -19,13 +19,9 @@ const ExchangeDetail = () => {
   const [currency, setCurrency] = useState([]);
 
   useEffect(() => {
-    api
-      .get(`/exchanger/currency/${slug}`, {
-        headers: { Authorization: `Token ${localStorage.getItem("token")}` },
-      })
-      .then((response) => {
-        setCurrency(response.data);
-      });
+    api.get(`/exchanger/currency/${slug}`).then((response) => {
+      setCurrency(response.data);
+    });
   }, []);
 
   return (
@@ -77,7 +73,7 @@ const ExchangeDetail = () => {
           <Iframe currency={currency} />
         </div>
         <div className="exchange_detail_block_two">
-          <SetCourses currency={currency} />
+          <SetCourses />
           <ActiveAds />
         </div>
         <Dynamics currency={currency} />

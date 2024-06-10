@@ -138,8 +138,6 @@ const Table = ({ title }) => {
                           className="gray_texts_flex_one"
                           style={{ width: " 60%" }}
                         >
-                          <img className="icon" src={map} alt="" />
-                          <p className="gray">{el.address}</p>
                         </div>
                       </div>
                     </div>

@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from "react";
 import "./ExchangeBureaus.css";
 import map from "../../img/map.svg";
-import number from "../../img/map.svg";
 import search from "../../img/Search.svg";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { api } from "../../Api";
 import DG from "2gis-maps";
 import { FaPhoneAlt } from "react-icons/fa";
+import { FaLocationDot } from "react-icons/fa6";
 
 const ExchangeBureaus = () => {
   const [value, setValue] = useState("");
-  const navigate = useNavigate();
   const [geo, setGeo] = useState([]);
 
   useEffect(() => {
@@ -72,11 +71,21 @@ const ExchangeBureaus = () => {
                   <NavLink to={`/exchange-detail/${el.slug}`}>
                     <p className="title">{el.name}</p>
                   </NavLink>
-                  <p className="text">
-                    <img className="icon" src={map} alt="" />
-                    {el.address}
-                  </p>
-                  <p className="text" style={{ margin: "0 0 0 5px", gap: "5px" }}>
+                  <div className="flex-icon-dec">
+                    <div style={{width: "20px", height: "20px"}}>
+                      <FaLocationDot size={20} color="#1856cd" />
+                    </div>
+                    <p className="text">{el.address}</p>
+                  </div>
+                  <p
+                    className="text"
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "8px",
+                      margin:"0 0 0 3px",
+                    }}
+                  >
                     <FaPhoneAlt size={16} color="#1856cd" /> {el.phone}
                   </p>
                 </div>

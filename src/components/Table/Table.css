@@ -22,6 +22,7 @@
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 10px;
 }
 
 .table .flex {
@@ -77,13 +78,14 @@
 .table .carob {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
 }
 .table .carob .logos {
   width: 45px;
   height: 45px;
   object-fit: cover;
   object-position: center;
+  border-radius: 50%;
 }
 .table .star {
   width: 24px;

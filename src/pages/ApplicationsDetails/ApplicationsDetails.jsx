@@ -54,9 +54,10 @@ const ApplicationsDetails = () => {
   };
 
   const handleChange = () => {
-    if (!localStorage.getItem("token")) {
-      navigate("/login");
+    if (localStorage.getItem("token")) {
       setPhoneUser(!phoneUser);
+    } else {
+      navigate("/login");
     }
   };
   const give = user.total * user.course;

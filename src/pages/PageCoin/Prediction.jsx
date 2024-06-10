@@ -26,6 +26,7 @@ const Prediction = ({ slug, open, handleCharts }) => {
         }
       });
   };
+
   const copyTextToClipboard2 = (id) => {
     api
       .post(
@@ -41,8 +42,7 @@ const Prediction = ({ slug, open, handleCharts }) => {
       });
   };
 
-  const handleLike = () => {
-    if (token) {
+  const handleLike = () => {  
       api
         .get(`/like-percentage/${slug}`, {
           headers: { Authorization: `Token ${token}` },
@@ -50,7 +50,6 @@ const Prediction = ({ slug, open, handleCharts }) => {
         .then((response) => {
           setLike(response.data);
         });
-    }
   };
   const handelDelete = (id) => {
     api
@@ -86,7 +85,7 @@ const Prediction = ({ slug, open, handleCharts }) => {
               }
             >
               <img src={fire} alt="" />
-              {like.like}
+              {like.like_percentage}
             </div>
           ) : (
             <div
@@ -107,7 +106,7 @@ const Prediction = ({ slug, open, handleCharts }) => {
               }
             >
               <img src={fu} alt="" />
-              {like.dislike}
+              {like.dislike_percentage}
             </div>
           ) : (
             <div
