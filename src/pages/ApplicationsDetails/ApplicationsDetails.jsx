@@ -78,7 +78,7 @@ const ApplicationsDetails = () => {
       setMetaTag("og:title", user.user);
       setMetaTag("title", user.user);
       setMetaTag("og:description", user.description);
-      setMetaTag("keywords", user.description.replaceAll(" ", ", "));
+      setMetaTag("keywords", user.description ? user.description.replaceAll(" ", ", ") : "");
     }
   }, [user]);
   return (
