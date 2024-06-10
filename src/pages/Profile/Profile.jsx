@@ -83,7 +83,7 @@ const Profile = ({ profiles, handleEditProfile }) => {
     }
   });
 
-  const isActiveUser = localStorage.getItem("user-is-active") === "false";
+  const isActiveUser = localStorage.getItem("user-is-active") === "true";
   return (
     <div className="profile">
       {isActiveUser ? (
