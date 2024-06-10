@@ -35,6 +35,37 @@ const PageCoin = ({ data }) => {
   useEffect(() => {
     handleCharts();
   }, []);
+  useEffect(() => {
+    if (open) {
+      document.title = open.crypto?.name;
+
+      const setMetaTag = (name, content) => {
+        let metaTag = document.querySelector(`meta[name="${name}"]`);
+        if (!metaTag) {
+          metaTag = document.createElement("meta");
+          metaTag.name = name;
+          document.head.appendChild(metaTag);
+        }
+        metaTag.content = content;
+      };
+     
+      setMetaTag("og:title", open.crypto?.name);
+      setMetaTag("og:image", open.crypto?.img);
+      setMetaTag("title", open.crypto?.name);
+      const questionDetail =
+        open.question &&
+        open.question[0] &&
+        open.question[0].detail &&
+        open.question[0].detail[0];
+      setMetaTag("og:description", questionDetail ? questionDetail.answer : "");
+      setMetaTag(
+        "keywords",
+        questionDetail && questionDetail.question
+          ? questionDetail.question.replaceAll(" ", ", ")
+          : ""
+      );
+    }
+  }, [open]);
 
   return (
     <div className="page_coin">

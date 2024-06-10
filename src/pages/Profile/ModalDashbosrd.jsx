@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Modal from "../../components/UI/Modal/Modal";
 import { api } from "../../Api";
-import timoutImage from "../../img/timout.svg";
 import Loading from "../../components/UI/Loading/Loading";
-import { Alert } from "../../components/UI/alert/alert";
+import black from "../../img/Blackk.png";
 
 const ModalDashbosrd = ({
   count,
@@ -15,6 +14,7 @@ const ModalDashbosrd = ({
   dataCompanies,
   setDataCompanies,
   handleEditProfile,
+  setBeing,
 }) => {
   const [verificationValue, setVerificationValue] = useState({
     logo: null,
@@ -57,12 +57,15 @@ const ModalDashbosrd = ({
       if (response.data.response === true) {
         setLoading(false);
         handleEditProfile();
+        setCount({ ...count, third: true });
+        setBeing(true);
       } else {
         setLoading(false);
         setError(response.data.message);
         setError(response.data.logo);
         setCount({ ...count, first: false, second: false, third: false });
       }
+      setError(response.data.logo);
     } catch (error) {
       setLoading(false);
       console.error("Ошибка при отправке данных на сервер:", error);
@@ -88,8 +91,8 @@ const ModalDashbosrd = ({
                   Данные
                 </p>
               </div>
-              {/* <div className={`line ${count.first && "active"}`}></div>
-              <div className={`verification_box ${count.second && "active"}`}>
+              <div className={`line ${count.first && "active"}`}></div>
+              {/* <div className={`verification_box ${count.second && "active"}`}>
                 3{" "}
                 <p className={`absolute_text ${count.second && "active"}`}>
                   Верификация
@@ -103,7 +106,7 @@ const ModalDashbosrd = ({
             count.third ? (
               <form style={{ width: 360 }} className="form_password">
                 <div className="timout">
-                  <img src={timoutImage} alt="" />
+                  <img src={black} alt="" />
                   <p className="text">
                     Ваш аккаунт находится на стадии проверки. Ожидайте
                     потверждение верификации
@@ -120,25 +123,26 @@ const ModalDashbosrd = ({
                 </button>
               </form>
             ) : (
-              <form
-                style={{ width: 850 }}
-                onSubmit={sendDataToServer}
-                className="form_password"
-              >
-                <h1 onClick={() => setCount({ ...count, third: true })}>
-                  verification
-                </h1>
+              ""
+              // <form
+              //   style={{ width: 850 }}
+              //   onSubmit={sendDataToServer}
+              //   className="form_password"
+              // >
+              //   <h1 onClick={() => setCount({ ...count, third: true })}>
+              //     verification
+              //   </h1>
 
-                <button
-                  style={{
-                    marginTop: 20,
-                  }}
-                  type="submit"
-                  className="button_form"
-                >
-                  Далее
-                </button>
-              </form>
+              //   <button
+              //     style={{
+              //       marginTop: 20,
+              //     }}
+              //     type="submit"
+              //     className="button_form"
+              //   >
+              //     Далее
+              //   </button>
+              // </form>
             )
           ) : (
             <form
@@ -290,7 +294,7 @@ const ModalDashbosrd = ({
                 style={{
                   marginTop: 20,
                 }}
-                type="submit"
+                // type="submit"
                 className="button_form"
               >
                 {loading ? <Loading /> : "Далее"}

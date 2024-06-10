@@ -23,6 +23,30 @@ const ExchangeDetail = () => {
       setCurrency(response.data);
     });
   }, []);
+  useEffect(() => {
+    if (currency) {
+      document.title = currency.crypto?.license_num;
+
+      const setMetaTag = (name, content) => {
+        let metaTag = document.querySelector(`meta[name="${name}"]`);
+        if (!metaTag) {
+          metaTag = document.createElement("meta");
+          metaTag.name = name;
+          document.head.appendChild(metaTag);
+        }
+        metaTag.content = content;
+      };
+
+      setMetaTag("og:title", currency.crypto?.license_num);
+      setMetaTag("og:image", currency.crypto?.logo);
+      setMetaTag("title", currency.crypto?.license_num);
+      setMetaTag("og:description", currency.crypto?.description);
+      setMetaTag(
+        "keywords",
+        currency.crypto?.description.replaceAll(" ", ", ")
+      );
+    }
+  }, [currency]);
 
   return (
     <div className="exchange_detail">

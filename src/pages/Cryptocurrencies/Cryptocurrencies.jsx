@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
 import "./Cryptocurrencies.css";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { api } from "../../Api";
 
 const Cryptocurrencies = () => {
-  const navigate = useNavigate();
   const [data, setData] = useState([]);
   useEffect(() => {
     api.get("/crypto").then((response) => setData(response.data));
+  }, []);
+  useEffect(() => {
+    document.title = "Криптовалюты";
   }, []);
   return (
     <div className="cryptocurrencies">

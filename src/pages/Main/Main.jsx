@@ -17,6 +17,10 @@ const Main = ({
   name,
   calculate,
 }) => {
+  useEffect(() => {
+    document.title =
+      "Курс валют в Бишкеке, Обмен валюты :: Курс валют в Бишкеке, Курсы Моссовета в Бишкеке";
+  });
   return (
     <div className="main">
       <Nav publis={publis} />

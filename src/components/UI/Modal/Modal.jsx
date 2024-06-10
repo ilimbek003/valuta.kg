@@ -10,12 +10,13 @@ const Modal = ({ close, setModal, children }) => {
         {close ? (
           ""
         ) : (
-          <img
-            onClick={() => setModal(false)}
-            className="close"
-            src={closeImage}
-            alt=""
-          />
+          ""
+          // <img
+          //   onClick={() => setModal(false)}
+          //   className="close"
+          //   src={closeImage}
+          //   alt=""
+          // />
         )}
         {children}
       </div>

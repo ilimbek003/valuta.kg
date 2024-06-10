@@ -26,6 +26,9 @@ const Favorites = () => {
     setFavorites(updatedFavorites);
     localStorage.setItem("exchange", JSON.stringify(updatedFavorites));
   };
+  useEffect(() => {
+    document.title = "Избранное ";
+  }, []);
   return (
     <div className="table favorites " style={{ margin: "30px 0 50px 0" }}>
       <div className="container favorites-none">

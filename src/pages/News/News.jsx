@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./News.css";
 import navigate from "../../img/navigate.svg";
 import { NavLink, useNavigate } from "react-router-dom";
 
 const News = ({ data }) => {
   const navigation = useNavigate();
+  useEffect(() => {
+    document.title = "Все новости";
+  }, []);
   return (
     <div className="main_news news">
       <div className="container">

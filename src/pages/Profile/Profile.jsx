@@ -14,6 +14,7 @@ import Accounts from "./Accounts";
 import ChangePassword from "./ChangePassword";
 import add_photo from "../../img/add_photo.svg";
 import ModalDashbosrd from "./ModalDashbosrd";
+import black from "../../img/Blackk.png";
 
 const Profile = ({ profiles, handleEditProfile }) => {
   const navigate = useNavigate();
@@ -24,7 +25,6 @@ const Profile = ({ profiles, handleEditProfile }) => {
   const [modalEditAccount, setModalEditAccount] = useState(false);
   const [modalEditCompanies, setModalEditCompanies] = useState(false);
   const [verification, setVerification] = useState(true);
-  const [loading, setLoading] = useState(false);
 
   const [dataCompanies, setDataCompanies] = useState({
     name: "",
@@ -39,6 +39,7 @@ const Profile = ({ profiles, handleEditProfile }) => {
     second: false,
     third: false,
   });
+  const [being, setBeing] = useState(false);
   const [empty, setEmpty] = useState(false);
   const [timoutImage, setTimoutImage] = useState(false);
 
@@ -84,24 +85,48 @@ const Profile = ({ profiles, handleEditProfile }) => {
   });
 
   const isActiveUser = localStorage.getItem("user-is-active") === "true";
+  useEffect(() => {
+    document.title = "Личный кабинет";
+  }, []);
   return (
     <div className="profile">
       {isActiveUser ? (
         ""
       ) : (
-        <div> 
+        <div>
           {verification && (
-            <ModalDashbosrd
-              count={count}
-              add_photo={add_photo}
-              setCount={setCount}
-              setEmpty={setEmpty}
-              timoutImage={timoutImage}
-              setVerification={setVerification}
-              dataCompanies={dataCompanies}
-              setDataCompanies={setDataCompanies}
-              handleEditProfile={handleEditProfile}
-            />
+            <div>
+              {profiles?.failed_verification === true ? (
+                <ModalDashbosrd
+                  count={count}
+                  add_photo={add_photo}
+                  setCount={setCount}
+                  setEmpty={setEmpty}
+                  timoutImage={timoutImage}
+                  setVerification={setVerification}
+                  dataCompanies={dataCompanies}
+                  setDataCompanies={setDataCompanies}
+                  handleEditProfile={handleEditProfile}
+                  setBeing={setBeing}
+                />
+              ) : (
+                ""
+              )}
+              {profiles?.is_processing === true ? (
+                <Modal>
+                  <div className="being">
+                    <h1 className="">Ожидание проверки</h1>
+                    <img src={black} alt="black" />
+                    <p>
+                      Ваш аккаунт находится на стадии проверки. <br /> Ожидайте
+                      потверждение
+                    </p>
+                  </div>
+                </Modal>
+              ) : (
+                ""
+              )}
+            </div>
           )}
         </div>
       )}

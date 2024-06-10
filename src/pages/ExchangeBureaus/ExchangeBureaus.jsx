@@ -33,7 +33,9 @@ const ExchangeBureaus = () => {
       mapInstance.remove();
     };
   });
-
+  useEffect(() => {
+    document.title = "Обменные бюро";
+  }, []);
   return (
     <div className="exchange-bureaus-map">
       <div className="relative one">
@@ -72,7 +74,7 @@ const ExchangeBureaus = () => {
                     <p className="title">{el.name}</p>
                   </NavLink>
                   <div className="flex-icon-dec">
-                    <div style={{width: "20px", height: "20px"}}>
+                    <div style={{ width: "20px", height: "20px" }}>
                       <FaLocationDot size={20} color="#1856cd" />
                     </div>
                     <p className="text">{el.address}</p>
@@ -83,7 +85,7 @@ const ExchangeBureaus = () => {
                       display: "flex",
                       alignItems: "center",
                       gap: "8px",
-                      margin:"0 0 0 3px",
+                      margin: "0 0 0 3px",
                     }}
                   >
                     <FaPhoneAlt size={16} color="#1856cd" /> {el.phone}

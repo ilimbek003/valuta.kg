@@ -61,7 +61,26 @@ const ApplicationsDetails = () => {
     }
   };
   const give = user.total * user.course;
+  useEffect(() => {
+    if (user) {
+      document.title = user.user;
 
+      const setMetaTag = (name, content) => {
+        let metaTag = document.querySelector(`meta[name="${name}"]`);
+        if (!metaTag) {
+          metaTag = document.createElement("meta");
+          metaTag.name = name;
+          document.head.appendChild(metaTag);
+        }
+        metaTag.content = content;
+      };
+
+      setMetaTag("og:title", user.user);
+      setMetaTag("title", user.user);
+      setMetaTag("og:description", user.description);
+      setMetaTag("keywords", user.description.replaceAll(" ", ", "));
+    }
+  }, [user]);
   return (
     <div className="applications_details">
       <div className="container">

@@ -9,6 +9,9 @@ const History = ({
   setActiveCategoryId,
   handleChart,
 }) => {
+  useEffect(() => {
+    document.title = "Архив криптовалют";
+  }, []);
   return (
     <div className="history">
       <div className="container">

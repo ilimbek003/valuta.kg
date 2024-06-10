@@ -358,7 +358,41 @@
   align-items: center;
   justify-content: space-between;
 }
-
+.profile .being {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+.profile .being h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--valuta-, rgba(28, 28, 28, 1));
+  margin: 0 0 20px 0;
+}
+.profile .being img {
+  width: 113px;
+  margin: 0 0 20px 0;
+}
+.profile .being p {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--valuta--, rgba(140, 140, 140, 1));
+  text-align: center;
+  margin: 0 0 20px 0;
+}
+.profile .being button {
+  width: 100%;
+  height: 40px;
+  background: var(--valuta-, rgba(24, 86, 205, 1));
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 1);
+  text-align: center;
+}
 @media screen and (max-width: 900px) {
   .profile .profile_block {
     display: grid;
@@ -414,7 +448,7 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
-}
+  }
 }
 @media screen and (max-width: 450px) {
   .profile .between {

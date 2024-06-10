@@ -16,6 +16,28 @@ const NewsDetail = () => {
         console.log(error);
       });
   }, []);
+  useEffect(() => {
+    if (news) {
+      document.title = news.news?.title;
+
+      const setMetaTag = (name, content) => {
+        let metaTag = document.querySelector(`meta[name="${name}"]`);
+        if (!metaTag) {
+          metaTag = document.createElement("meta");
+          metaTag.name = name;
+          document.head.appendChild(metaTag);
+        }
+        metaTag.content = content;
+      };
+
+      setMetaTag("og:title", news.news?.title);
+      setMetaTag("og:image", news.news?.image);
+      setMetaTag("title", news.news?.title);
+      setMetaTag("description", news.news?.description);
+      setMetaTag("og:description", news.news?.description);
+      setMetaTag("keywords", news.news?.description.replaceAll(" ", ", "));
+    }
+  }, [news]);
   return (
     <div className="news_detail">
       <div className="container">
