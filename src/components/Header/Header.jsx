@@ -10,8 +10,9 @@ import { GoX } from "react-icons/go";
 const Header = () => {
   const [burger, setBurger] = useState(false);
   const token = localStorage.getItem("token");
+  const is = localStorage.getItem("is_processing");
   return (
-    <div className="header">
+    <div className={is ? "header active " : "header"}>
       <div className="container">
         <div className="head">
           <NavLink to="/">

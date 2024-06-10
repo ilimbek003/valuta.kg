@@ -82,6 +82,9 @@ const Profile = ({ profiles, handleEditProfile }) => {
     if (profiles?.user?.is_active !== undefined) {
       localStorage.setItem("user-is-active", profiles.user.is_active);
     }
+    if (profiles?.is_processing !== undefined) {
+      localStorage.setItem("is_processing", profiles.is_processing);
+    }
   });
 
   const isActiveUser = localStorage.getItem("user-is-active") === "true";
