@@ -10,6 +10,7 @@ const Nav = ({ publis }) => {
   const settings = {
     dots: false,
     infinite: true,
+    arrows: false,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,

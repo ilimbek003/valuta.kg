@@ -8,42 +8,7 @@ import { useNavigate } from "react-router-dom";
 
 const Crypto = ({ open }) => {
   const navigate = useNavigate();
-  const [starredIds, setStarredIds] = useState({});
-
-  const handleStar = (id) => {
-    api
-      .post(
-        `/api/star/crypto/${id}/`,
-        { id },
-        {
-          headers: {
-            Authorization: `Token ${localStorage.getItem("token")}`,
-          },
-        }
-      )
-      .then((response) => {
-        if (response.data.response === true) {
-          Alert("success", response.data.message);
-          setStarredIds((prevIds) => ({ ...prevIds, [id]: true }));
-        }
-      });
-  };
-
-  const handleDelete = (id) => {
-    api
-      .delete(`/api/star/crypto/${id}/`, {
-        headers: {
-          Authorization: `Token ${localStorage.getItem("token")}`,
-        },
-      })
-      .then((response) => {
-        if (response.data.response === true) {
-          Alert("success", response.data.message);
-          const { [id]: removedId, ...restIds } = starredIds;
-          setStarredIds(restIds);
-        }
-      });
-  };
+  const [starredIds, setStarredIds] = useState(false);
 
   const min = parseInt(open.crypto?.rates?.min_price);
   const max = parseInt(open.crypto?.rates?.max_price);
@@ -63,39 +28,8 @@ const Crypto = ({ open }) => {
         <div className="flex">
           <p className="text g">{open.crypto?.count_rates}</p>
           {localStorage.getItem("token") ? (
-            <div>
-              {localStorage
-                .getItem(`stars${open?.crypto?.id}`)
-                ?.includes(open?.crypto?.id) ? (
-                <img
-                  onClick={() =>
-                    handleDelete(
-                      open?.crypto?.id,
-                      !starredIds[open?.crypto?.id]
-                    ) ||
-                    localStorage.removeItem(
-                      `stars${open?.crypto?.id}`,
-                      open?.crypto?.id
-                    )
-                  }
-                  className="star"
-                  src={star2}
-                  alt=""
-                />
-              ) : (
-                <img
-                  onClick={() => {
-                    handleStar(open.crypto.id, !starredIds[open?.crypto?.id]);
-                    localStorage.setItem(
-                      `stars${open?.crypto?.id}`,
-                      open?.crypto?.id
-                    );
-                  }}
-                  className="star"
-                  src={star1}
-                  alt=""
-                />
-              )}
+            <div onClick={() => setStarredIds(!starredIds)}>
+              <img className="star1" src={starredIds ? star2 : star1} alt="" />
             </div>
           ) : (
             <img

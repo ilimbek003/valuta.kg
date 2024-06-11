@@ -81,6 +81,7 @@ const Profile = ({ profiles, handleEditProfile }) => {
   useEffect(() => {
     if (profiles?.user?.is_active !== undefined) {
       localStorage.setItem("user-is-active", profiles.user.is_active);
+      localStorage.removeItem("is_processing");
     }
     if (profiles?.is_processing !== undefined) {
       localStorage.setItem("is_processing", profiles.is_processing);
@@ -125,7 +126,7 @@ const Profile = ({ profiles, handleEditProfile }) => {
                       Ваш аккаунт находится на стадии проверки. <br /> Ожидайте
                       потверждение
                     </p>
-                    <button onClick={() => setBeing(false)}>Понятно</button>
+                    {/* <button onClick={() => setBeing(false)}>Понятно</button> */}
                   </div>
                 </Modal>
               ) : (

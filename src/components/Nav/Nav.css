@@ -37,7 +37,7 @@ table .nomed {
 }
 table,
 td {
-  padding: 18px 45px 18px 0;
+  padding: 15px 45px 15px 0;
 }
 
 table {
@@ -175,15 +175,19 @@ table a {
 .nav .best-course {
   display: none;
 }
-
+.nav .nav_box_s .images-img {
+  width: 35px;
+  height: 35px;
+}
 .nav .nav_box_s .first img {
-  width: 40px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   border-radius: 50%;
 }
-
 .nav .nav_main .resize {
   width: 100%;
-  min-height: 410px;
+  min-height: 400px;
 }
 .nav .nav_main .rec {
   width: 324px;
@@ -194,9 +198,6 @@ table a {
 }
 
 .nav .nav_main .nav_box {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 2fr 2fr 1fr;
   margin-bottom: 30px;
 }
 
@@ -265,7 +266,7 @@ table a {
 .nav .first {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 10px;
 }
 
 .nav .first .name {
@@ -419,7 +420,7 @@ table a {
   }
 }
 
-@media (max-width: 430px) {
+@media (max-width: 460px) {
   .nav .last_bets {
     display: none;
   }

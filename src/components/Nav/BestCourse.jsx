@@ -70,7 +70,9 @@ const BestCourse = ({ data }) => {
           <NavLink className="link-a" to={`page-coin/${el.slug}`} key={id}>
             <div className="nav_box_s">
               <div className="first ones">
-                <img src={el.img} alt="" />
+                <div className="images-img">
+                  <img src={el.img} alt="" />
+                </div>
                 <p className="name">{el.symbol}</p>
               </div>
               {best === true ? (
